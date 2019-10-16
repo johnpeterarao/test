@@ -1,0 +1,297 @@
+.page-sidebar {
+    padding-left: 0;
+
+    @include breakpoint("smartphone") {
+        padding-right: 0;
+    }
+
+
+    &#faceted-search-container {
+        nav {
+            & > .sidebarBlock.subcategories {
+                &:first-child {
+                    @include breakpoint("smartphone") {
+                        display: none;
+                    }
+                }
+            }
+
+            .facetedSearch-refineFilters {
+                @include breakpoint("smartphone") {
+                    display: block;
+                    padding-top: 16px;
+                    margin-bottom: 6px;
+                }
+            }
+
+            .sidebarBlock {
+                & + .sidebarBlock {
+                    border-top: 1px solid $midnight;
+                    margin-top: 18px;
+                    padding-top: 20px;
+
+                    @include breakpoint("smartphone") {
+                        border-top: none;
+                        margin-top: 0;
+                        padding-top: 0;
+                    }
+                }
+
+                h5.sidebarBlock-heading {
+                    font-family: $secondary;
+                    font-size: 12px;
+                    font-weight: 300;
+                    color: $cinnabar;
+                    text-transform: uppercase;
+                }
+            }
+
+            .navList {
+                padding-top: 10px;
+
+                .navList-item {
+                    a.navList-action {
+                        font-size: 13px;
+                        color: $midnight;
+                    }
+                }
+            }
+
+            .facetedSearch {
+                h5.sidebarBlock-heading {
+                    color: $midnight;
+                    margin-bottom: 12px;
+
+                    a {
+                        font-family: $secondary;
+                        font-size: 11px;
+                        color: $cinnabar;
+                        text-decoration: underline;
+                        text-transform: initial;
+                        float: right;
+                    }
+                }
+
+                .inlineList {
+                    &.inlineList--labels {
+                        margin-left: 0;
+
+                        li {
+                            margin-left: 0;
+
+                            a {
+                                &.facetLabel {
+                                    font-family: $secondary;
+                                    background: $pattens-blue;
+                                    color: $midnight;
+                                    padding: 2px 5px;
+                                    margin-right: 4px;
+
+                                    @include border-radius(2px);
+
+                                    i {
+                                        font-size: 10px;
+                                        margin-left: 8px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .facetedSearch-navList {
+                    margin-top: 0;
+
+                    .accordion--navList {
+                        @include breakpoint("smartphone") {
+                            border: none;
+                        }
+
+
+                        @include breakpoint("medium") {
+                            box-shadow: none;
+                        }
+
+
+                        .accordion-block {
+                            margin-top: 0;
+
+                            .accordion-navigation {
+                                @include breakpoint("smartphone") {
+                                    border: none;
+                                }
+
+
+                                &.toggleLink {
+                                    .accordion-title {
+                                        &:before {
+                                            font-family: $FontAwesome;
+                                            font-size: 24px;
+                                            content: "\f107";
+                                            right: 0;
+                                            margin-top: 0;
+                                            transform: translateY(-50%);
+                                            -webkit-transform: translateY(-50%);
+                                            -moz-transform: translateY(-50%);
+                                        }
+                                    }
+
+                                    &.is-open {
+                                        .accordion-title {
+                                            &:before {
+                                                content: "\f106";
+                                            }
+                                        }
+                                    }
+                                }
+
+                                h5.accordion-title {
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    color: $cinnabar;
+                                    text-transform: uppercase;
+                                    border: none;
+                                    border-bottom: 1px solid $zircon;
+                                    padding: 18px 0 15px;
+                                    margin-bottom: 0;
+
+                                    &:hover {
+                                        background: transparent;
+                                    }
+                                }
+                            }
+
+                            .accordion-content {
+                                border: none;
+                                border-bottom: 1px solid $zircon;
+
+                                @include breakpoint("smartphone") {
+                                    padding: 0;
+                                }
+
+
+                                .navList {
+                                    padding: 13px 0px;
+
+                                    .navList-item {
+                                        a.navList-action {
+                                            margin-bottom: 0;
+                                            padding: 3px 24px;
+
+                                            .navList-action-close {
+                                                display: none;
+                                            }
+
+                                            &.navList-action--checkbox {
+                                                &:before, &:after {
+                                                    background-color: transparent;
+                                                    border: none;
+                                                    width: 16px;
+                                                    height: 16px;
+                                                    left: 0;
+                                                    margin-top: 0;
+                                                    transform: translateY(-50%);
+                                                    -webkit-transform: translateY(-50%);
+                                                    -moz-transform: translateY(-50%);
+                                                }
+
+                                                &:before {
+                                                    background-image: url("../img/custom-assets/global/unchecked.png");
+                                                }
+
+                                                &:after {
+                                                    background-image: url("../img/custom-assets/global/checked.png");
+                                                }
+
+                                                .is-selected {
+                                                    &:after {
+                                                        -ms-transform: scale(1);
+                                                        transform: scale(1);
+                                                        opacity: 1;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                #facet-range-form {
+                                    padding: 16px 0px;
+                                    margin: 0;
+
+                                    .form-input {
+                                        height: auto;
+                                        font-size: 12px;
+                                        color: $aluminium;
+                                        border-color: $link-water;
+
+                                        @include border-radius(2px);
+                                    }
+
+                                    .button--small {
+                                        font-size: 13px;
+                                        line-height: 16px;
+                                        background-color: $cinnabar;
+                                        border-color: $cinnabar;
+                                        color: $white;
+
+                                        &:hover {
+                                            background: $bittersweet;
+                                            border-color: $bittersweet;
+                                        }
+                                    }
+
+                                    .form-input, .button--small {
+                                        padding: 11px;
+                                    }
+                                }
+                            }
+
+                            &:last-child {
+                                h5.accordion-title, .accordion-content {
+                                    border-bottom: 0px;
+
+                                    a.toggleLink {
+                                        @include breakpoint("smartphone") {
+                                            display: block;
+                                            margin: 15px 0;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+
+                                .toggleLink {
+                                    &.is-open {
+                                        h5.accordion-title {
+                                            border-bottom: 1px solid $zircon;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .facetedSearch-toggle {
+            font-size: 14px;
+            font-weight: 500;
+            max-width: 163px;
+            height: 40px;
+            margin: 0;
+            border-radius: 0;
+            border: 1px solid $harley-davidson-orange;
+            color: $cinnabar;
+            text-align: center;
+
+            &.is-open {
+                background: $tutu;
+            }
+
+            @include breakpoint("extra-small") {
+                width: 50%;
+            }
+        }
+    }
+}

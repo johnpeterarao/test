@@ -1,0 +1,292 @@
+{{#partial "page"}}
+{{!--<ul class="breadcrumbs desktop">
+    <li class="breadcrumb ">
+      <a href="/" class="breadcrumb-label">Home</a>
+    </li>
+    <li class="breadcrumb is-active">
+        <span class="breadcrumb-label">{{ page.title }}</span>
+    </li>
+</ul>
+<ul class="breadcrumbs mobile">
+  <li class="breadcrumb ">
+    <a href="/" class="breadcrumb-label">Back to Home</a>
+  </li>
+</ul>--}}
+
+<main class="page static-page experience-feedback expPage clearfix">
+    <div class="banner-new">
+        <img src="{{cdn 'assets/img/custom-assets/activation/experience_banner.jpg'}}">
+        <h2> <span>CONGRATS !</span> Here we are helping you get a better experience at Kidstuff</h2>
+    </div>
+    <!--<div class="banner">
+        <h2> <span>CONGRATS !</span> Here we are helping you get a better experience at Kidstuff</h2>
+    </div>-->
+
+    <div class="experience-feedback-wrapper clearfix">
+
+        <div class="step-block">
+            <span>Step</span>
+            <ul>
+                <li><a href="javascript:void(0);" class="active step1indicator stepIndicator">1</a></li>
+                <li><a href="javascript:void(0);" class="step2indicator stepIndicator">2</a></li>
+            </ul>
+        </div>
+        
+        <form name="memberDataCollect" id="memberDataCollect" class="experience-feedback-form form" onsubmit="return false">
+			<input type="hidden" id="memberEmail" name="memberEmail" value="">
+			<input type="hidden" id="memberMobile" name="memberMobile" value="">
+			<div class="row formStep1">
+
+				<div class="column small-12 medium-11 medium-offset-1">
+				<h6>TELL US MORE ABOUT YOU: </h6>
+				</div>
+
+				<div class="column small-12 medium-4 medium-offset-1 buying-option">
+					<div class="form-field">
+					<label class="form-label" for="">Buying for my kids:</label>
+
+					<input type="radio" class="form-radio" name="buyingFor" id="buyingForYes" value="Yes" checked>
+					<label class="form-label" for="buyingForYes">Yes</label>
+
+					<input type="radio" class="form-radio" name="buyingFor" id="buyingForNo" value="No">
+					<label class="form-label" for="buyingForNo">No</label>
+					</div>
+				</div>
+
+				<div class="column small-12 medium-5 buying-for BuyingForTypeDiv">
+					<div class="form-field">
+					<label class="form-label" for="BuyingForType">Buying for my:</label>
+					<select class="form-select" id="BuyingForType" data-label="" aria-required="" name="BuyingForType">
+						<option value="">Please Select</option>
+						<option value="Grand Kids">Grand Kids</option>
+						<option value="Nephew">Nephew</option>
+						<option value="Nieces">Nieces</option>
+						<option value="Friend's Kids">Friend's Kids</option>
+					</select>
+					</div>
+				</div>
+
+				<div class="clearfix"></div>
+
+				<div class="column small-12 medium-4 medium-offset-1 number-of-kids">
+					<div class="form-field">
+						<label class="form-label" for="">How Many Kids?</label>
+
+						<input type="radio" class="form-radio" name="howManyKids" id="howManyKids1" value="1" >
+						<label class="form-label" for="howManyKids1">1</label>
+
+						<input type="radio" class="form-radio" name="howManyKids" id="howManyKids2" value="2">
+						<label class="form-label" for="howManyKids2">2</label>
+
+						<input type="radio" class="form-radio" name="howManyKids" id="howManyKids3" value="3">
+						<label class="form-label" for="howManyKids3">3</label>
+						
+						<input type="radio" class="form-radio" name="howManyKids" id="howManyKids4" value="4 or more">
+						<label class="form-label" for="howManyKids4">4 or more</label>
+					</div>
+				</div>
+
+				<div class="clearfix"></div>
+				
+				<div class="column small-12 medium-4 medium-offset-1 child-age-option">
+					<div class="form-field">
+						<label class="form-label" for="">Child's Age</label>
+
+						<input type="checkbox" class="form-checkbox ChildAge" name="ChildAge[]" id="ChildAge2" value="0 to 2" >
+						<label class="form-label" for="ChildAge2">0 to 2</label>
+
+						<input type="checkbox" class="form-checkbox ChildAge" name="ChildAge[]" id="ChildAge4" value="3 to 4">
+						<label class="form-label" for="ChildAge4">3 to 4</label>
+
+						<input type="checkbox" class="form-checkbox ChildAge" name="ChildAge[]" id="ChildAge6" value="5 to 6">
+						<label class="form-label" for="ChildAge6">5 to 6 </label>
+
+						<input type="checkbox" class="form-checkbox ChildAge" name="ChildAge[]" id="ChildAge8" value="7 to 8">
+						<label class="form-label" for="ChildAge8">7 to 8</label>
+
+						<input type="checkbox" class="form-checkbox ChildAge" name="ChildAge[]" id="ChildAgeAbove" value="8 and above">
+						<label class="form-label" for="ChildAgeAbove">8 and above</label>
+					</div>
+				</div>
+
+				<div class="clearfix"></div>
+
+				<div class="column small-12 medium-11 medium-offset-1 buying-time">
+				<div class="form-field">
+				<label class="form-label" for="">How often do you buy your child(ren) toys?</label>
+
+				<input type="radio" class="form-radio" name="oftenBuy" id="oftenBuyWeek" value="Every Week" >
+				<label class="form-label" for="oftenBuyWeek">Every Week</label>
+
+				<input type="radio" class="form-radio" name="oftenBuy" id="oftenBuyMonth" value="Every Month">
+				<label class="form-label" for="oftenBuyMonth">Every Month</label>
+
+				<input type="radio" class="form-radio" name="oftenBuy" id="oftenBuySpecial" value="On Special Occasions">
+				<label class="form-label" for="oftenBuySpecial">On Special Occasions</label>
+				</div>
+				</div>
+
+				<div class="column small-12 medium-6 medium-offset-1 button-group">
+				<input type="button" class="button button--primary cuntinueToStep2" value="Continue"> <span>or</span> <a href="javascript:void(0);" class="skipToStep2">Skip step</a>
+				</div>
+
+			</div>
+
+			<div class="row formStep2" style="display:none;">
+
+				<div class="column small-12 medium-8 medium-offset-1">
+				<h6>Thank you for your patience,<br>here is one last step to complete the form : </h6>
+				</div>
+
+				<div class="column small-12 medium-8 medium-offset-1 type-of-toys">
+				<div class="form-field">
+				<label class="form-label" for="">What type of toys capture your child’s imagination the most?</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="Animals" value="Animals">
+				<label class="form-label" for="Animals">Animals</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="Construction" value="Construction">
+				<label class="form-label" for="Construction">Construction</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="FiguresPlaysets" value="Figures & Playsets">
+				<label class="form-label" for="FiguresPlaysets">Figures & Playsets</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="Music" value="Music">
+				<label class="form-label" for="Music">Music</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="ImpulseSeasonal" value="Impulse & Seasonal">
+				<label class="form-label" for="ImpulseSeasonal">Impulse & Seasonal</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="Costumes" value="Costumes">
+				<label class="form-label" for="Costumes">Costumes</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="GamesPuzzles" value="Games & Puzzles">
+				<label class="form-label" for="GamesPuzzles">Games & Puzzles</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="OutdoorToysSportsGames" value="Outdoor toys, sports, and games">
+				<label class="form-label" for="OutdoorToysSportsGames">Outdoor toys, sports, and games</label>
+				
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="VehiclePlaysets" value="Vehicle & Playsets">
+				<label class="form-label" for="VehiclePlaysets">Vehicle & Playsets</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="ArtCraft" value="Art & Craft">
+				<label class="form-label" for="ArtCraft">Art & Craft</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="DollsDollHouse" value="Dolls & Doll House">
+				<label class="form-label" for="DollsDollHouse">Dolls & Doll House</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="InfantPreschool" value="Infant & Preschool">
+				<label class="form-label" for="InfantPreschool">Infant & Preschool</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="PlushToys" value="Plush Toys">
+				<label class="form-label" for="PlushToys">Plush Toys</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="WoodenToys" value="Wooden Toys">
+				<label class="form-label" for="WoodenToys">Wooden Toys</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="Books" value="Books">
+				<label class="form-label" for="Books">Books</label>
+				
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="EducationalToys" value="Educational Toys">
+				<label class="form-label" for="EducationalToys">Educational Toys</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="JewelleryDecorAccessories" value="Jewellery, Decor, and accessories">
+				<label class="form-label" for="JewelleryDecorAccessories">Jewellery, Décor, and accessories</label>
+
+				<input type="checkbox" class="form-checkbox TypeOfToys" name="TypeOfToys[]" id="Roleplay" value="Roleplay">
+				<label class="form-label" for="Roleplay">Roleplay</label>
+				</div>
+				</div>
+
+				<div class="column small-12 medium-8 medium-offset-1 rank-attribute">
+				<div class="form-field">
+				<label class="form-label" for="">Please rank the following</label>
+				</div>
+				<div class="form-field">
+				<label class="form-label" for="">Brand Name</label>
+				<select class="form-select" id="BrandNameRating" name="BrandNameRating">
+					<option value="">Please Select</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+				</div>
+				<div class="form-field">
+				<label class="form-label" for="">Educational</label>
+				<select class="form-select" id="EducationalRating" name="EducationalRating">
+					<option value="">Please Select</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+				</div>
+				
+				<div class="form-field">
+				<label class="form-label" for="">Price Conscious</label>
+				<select class="form-select" id="PriceConsciousRating" name="PriceConsciousRating">
+					<option value="">Please Select</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+				</div>
+
+				<div class="form-field">
+				<label class="form-label" for="">Long Lasting</label>
+				<select class="form-select" id="LongLastingRating" data-label="" aria-required="" name="LongLastingRating">
+					<option value="">Please Select</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+				</div>
+				
+				<div class="form-field">
+				<label class="form-label" for="">Trendy</label>
+				<select class="form-select" id="TrendyRating" data-label="" aria-required="" name="TrendyRating">
+					<option value="">Please Select</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+				</div>
+				<div class="form-field">
+				<label class="form-label" for="">Play Value</label>
+				<select class="form-select" id="PlayValueRating" data-label="" aria-required="" name="PlayValueRating">
+					<option value="">Please Select</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+				</div>
+				</div>
+
+
+
+				<div class="column small-12 medium-4 medium-offset-1 button-group">
+				<input type="button" class="button button--primary formFinalSubmit" value="Let’s Go !">
+				</div>
+
+			</div>
+    
+        </form>
+
+    </div>
+
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

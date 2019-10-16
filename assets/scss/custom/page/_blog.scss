@@ -1,0 +1,175 @@
+.blog {
+    margin-bottom: 70px;
+
+    @include breakpoint("smartphone-large") {
+        margin-top: 40px;
+        margin-bottom: 0px;
+    }
+
+
+    @include breakpoint("extra-small") {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    & + .blog {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+
+        @include breakpoint("smartphone-large") {
+            margin-top: 40px;
+        }
+    }
+
+    .blog-date {
+        font-family: $secondary;
+        font-size: 11px;
+        color: $nobel;
+        text-transform: uppercase;
+        display: block;
+        margin-top: 30px;
+        text-align: left;
+        min-height: 40px;
+
+        @include breakpoint("extra-small") {
+            text-align: center;
+            margin-top: 30px;
+        }
+    }
+
+    .blog-post-figure {
+        width: 100%;
+    }
+
+    .blog-post-body {
+        width: 100%;
+        text-align: left;
+        max-width: 622px;
+        margin: 0 auto;
+
+        h5 {
+            font-size: 16px;
+            line-height: 23px;
+            margin-top: 7px;
+            margin-bottom: 16px;
+
+            a {
+                color: $midnight;
+            }
+
+            @include breakpoint("extra-small") {
+                text-align: center;
+            }
+        }
+
+        .blog-post {
+            font-size: 13px;
+            line-height: 19px;
+            color: $nobel;
+
+            @include breakpoint("extra-small") {
+                text-align: center;
+            }
+
+
+            h4 {
+                font-size: 18px;
+                line-height: 22px;
+                text-transform: uppercase;
+                padding: 8px 0 16px;
+            }
+        }
+    }
+
+    .blog-thumbnail {
+        a {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    &.blog-details {
+        h1 {
+            text-transform: uppercase;
+            font-size: 30px;
+            line-height: 32px;
+        }
+
+        h1, .blog-thumbnail {
+            a {
+                cursor: text;
+            }
+        }
+
+        h1, h2, h3, h4 {
+            margin: 5px 0 15px;
+
+            a {
+                color: $harley-davidson-orange;
+            }
+        }
+
+        h5, h6 {
+            text-transform: inherit;
+
+            a {
+                font-weight: 500;
+                color: $midnight;
+            }
+        }
+
+        p {
+            //max-width: 624px;
+       
+        }
+    }
+}
+
+.pagination {
+    clear: left;
+
+    @include breakpoint("smartphone-large") {
+        margin-top: 50px;
+        float: left;
+        text-align: center;
+        width: 100%;
+    }
+}
+/*27-07-2018*/
+.blog.column.small-6.medium-4{
+	min-height:505px;
+}
+ul.my-item-list { margin: 50px -12px 50px -12px; clear: both; }
+ul.my-item-list:before, ul.my-item-list:after{ display:block; clear:both; content:''; width:100%;}
+ul.my-item-list li { list-style-type: none; float: left; width: 33.33%; margin: 0 0 20px 0; }
+
+@media only screen and (max-width: 767px) {
+	ul.my-item-list li{width:100%;}
+	}
+ul.my-item-list li p { display: block; margin: 0 12px; text-align: center; font-size: 18px; }
+ul.my-item-list li p img { padding: 25px 10px; border: 1px solid #cf392a; margin-bottom: 15px }
+ul.my-item-list li p span{ display:block; text-align:center;}
+ul.my-item-list li p a { display: block; background: #cf392a; margin-top: 10px; display: block; padding: 10px; text-align: center; text-transform: uppercase; color: #ffffff; font-size: 14px; }
+@media only screen and (max-width: 767px) {
+	ul.my-item-list li p a{ max-width:207px; margin-left:auto; margin-right:auto}
+	}
+.blog.blog-details h2.heading-item{ margin:60px 0 20px 0;}
+.blog.blog-details h2.sub-heading-item{ margin:0 0 20px 0; font-size:16px; color:#283443;}
+.off-text{text-align:center; font-size:14px;}
+.shop-now{text-align:center; display:block; margin:40px 0; }
+.shop-now a{ display: block; background: #cf392a;display: inline-block; padding: 10px; text-align: center; text-transform: uppercase; color: #ffffff; font-size: 14px; width:100%;max-width:207px;}
+
+.caps-text{ text-transform:uppercase;color:#cf392a;}
+ul.age-list{ margin:20px 0 0 0;}
+ul.age-list li {list-style-type: none; padding:3px 0; }
+ul.age-list li a{ font-size:14px; color:#cf392a; text-decoration:underline;}
+ul.age-list li a:hover{ text-decoration:none;}
+.red{color:#cf392a;}
+
+/*~~~~~11-01-19~~~~~*/
+ul.my-item-list.preparing_item li{width:50%}
+@media only screen and (max-width: 767px) {
+    ul.my-item-list.preparing_item li p{font-size:15px;}
+}

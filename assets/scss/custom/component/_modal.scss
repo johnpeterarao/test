@@ -1,0 +1,205 @@
+.modal {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .modal-header-title {
+        color: $black;
+    }
+
+    .productView {
+        .productView-image {
+            //max-width: 244px;
+            margin: auto;
+            float: none;
+            padding: 0;
+
+            @include breakpoint("medium") {
+                width: 50%;
+                min-height: inherit;
+                min-width: inherit;
+            }
+        }
+
+        .productView-title {
+            line-height: 30px;
+        }
+
+        .productView-brand {
+            font-size: 15px;
+            margin: 20px 0 20px;
+        }
+    }
+
+    .previewCartCheckout {
+        .previewCartCheckout-price {
+            line-height: 38px;
+        }
+    }
+
+    .productView-images {
+        margin: 0;
+    }
+
+    .productView-details {
+        margin-bottom: 0;
+        margin-top: 25px;
+
+        &:last-child {
+            margin-top: 0;
+        }
+    }
+
+    .productView-description {
+        display: none;
+    }
+
+    .modal-content {
+        .modal-body {
+            overflow: initial;
+
+            .previewCart {
+                padding: 40px 0;
+            }
+
+            .productView {
+                @include breakpoint("smartphone-large") {
+                    padding-top: 30px;
+                }
+            }
+
+            .giftWrapping-form {
+                margin: 20px 0;
+
+                @include breakpoint("smartphone-large") {
+                    margin: 40px 0px;
+                }
+
+
+                .form-select {
+                    max-width: initial;
+                }
+            }
+
+            .facet-quick-heading, .facetedSearch-optionColumns {
+                margin: 20px 10px;
+            }
+
+            #facetedSearch-filterItems {
+                margin: 0 10px;
+            }
+
+            .navList-action {
+                @include breakpoint("extra-small-portrait") {
+                    font-size: 12px;
+                }
+            }
+
+            .facetedSearch-optionColumns {
+                @include breakpoint("iphone5-portrait") {
+                    column-count: 2;
+                }
+            }
+        }
+    }
+}
+
+.modal-ad {
+    top: 0 !important;
+    height: 100%;
+    bottom: 0;
+    -ms-transform: none !important;
+    transform: none !important;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    width: 100%;
+    min-height: auto;
+    max-height: 100%;
+    background: rgba(0, 0, 0, 0.84);
+    .modal-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+    .modal_content {
+        max-width: 500px;
+        position: relative;
+        a:hover {
+            opacity: 1;
+        }
+    }
+    .modal-close {
+        background-color: $white;
+        top: 0;
+        right: 0;
+        color: #BA1A24;
+        font-size: 26px;
+        &:hover, &:focus, &:active {
+            background-color: #233442;
+            color: $white;
+        }
+    }
+}
+
+
+/*.modal {
+    .productView {
+        margin: 0;
+        display: inherit;
+
+        @include breakpoint("medium") {
+            width: 50%;
+            position: relative;
+        }
+
+
+        .productView-image {
+            max-width: 244px;
+            margin: auto;
+            float: none;
+            padding: 0;
+
+            @include breakpoint("medium") {
+                width: 100%;
+                min-height: inherit;
+                min-width: inherit;
+            }
+        }
+
+        .productView-inr {
+            @include breakpoint("medium") {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                transform: translateY(-50%);
+                -webkit-transform: translateY(-50%);
+            }
+        }
+    }
+
+    .previewCart {
+        .previewCartCheckout {
+            width: 50%;
+            background: none;
+            padding: 0;
+        }
+    }
+
+    .modal-body {
+        padding: 56px 70px;
+
+        @include breakpoint("extra-small") {
+            padding: 56px 16px;
+        }
+
+
+        h2 {
+            max-width: 475px;
+            margin: auto;
+            margin: 0 auto 25px;
+        }
+    }
+}*/

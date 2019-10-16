@@ -1,0 +1,42 @@
+{{#if social_media}}
+    <ul class="socialLinks socialLinks--alt">
+        {{#each social_media}}
+            <li class="socialLinks-item">
+                {{#if display_name '===' 'google+'}}
+                    <a class="icon icon--google" href="{{url}}" target="_blank">
+                        <svg><use xlink:href="#icon-google" /></svg>
+                    </a>
+                {{else}}
+                    <!-- <a class="icon icon--{{display_name}}" href="{{url}}" target="_blank">
+                        <svg><use xlink:href="#icon-{{display_name}}" /></svg>
+                    </a> -->
+                    {{#if display_name '===' 'twitter'}}
+                     <a class="icon icon--{{display_name}}" href="{{url}}" target="_blank">
+                            <i class="fa fa-twitter fa-2" aria-hidden="true"></i>
+                     </a>
+                    {{/if}}
+                    {{#if display_name '===' 'instagram'}}
+                     <a class="icon icon--{{display_name}}" href="{{url}}" target="_blank">
+                           <i class="fa fa-instagram fa-2" aria-hidden="true"></i>
+                     </a>
+                    {{/if}}
+                    {{#if display_name '===' 'facebook'}}
+                     <a class="icon icon--{{display_name}}" href="{{url}}" target="_blank">
+                            <i class="fa fa-facebook fa-2" aria-hidden="true"></i>
+                     </a>
+                    {{/if}}
+                    {{#if display_name '===' 'pinterest'}}
+                     <a class="icon icon--{{display_name}}" href="{{url}}" target="_blank">
+                            <i class="fa fa-pinterest fa-2" aria-hidden="true"></i>
+                     </a>
+                    {{/if}}
+                    {{#if display_name '===' 'youtube'}}
+                     <a class="icon icon--{{display_name}}" href="{{url}}" target="_blank">
+                            <i class="fa fa-youtube fa-2" aria-hidden="true"></i>
+                     </a>
+                    {{/if}}
+                {{/if}}
+            </li>
+        {{/each}}
+    </ul>
+{{/if}}

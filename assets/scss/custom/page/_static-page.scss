@@ -1,0 +1,543 @@
+.static-page {
+    padding-top: 48px;
+
+    &.store-details {
+        padding-top: 13px;
+
+        .static-page--content {
+            h1 {
+                text-align: center;
+            }
+        }
+    }
+
+    @include breakpoint("smartphone") {
+        padding-top: 10px;
+    }
+
+
+    .static-page--sidemenu {
+        @include breakpoint("smartphone") {
+            padding-bottom: 20px;
+            margin: 0 0 32px;
+
+            @include box-shadow(0px, 10px, 23px, -16px, rgba(0, 0, 0, 0.5), false);
+        }
+
+
+        &.bottom {
+            @include breakpoint("smartphone") {
+                padding-top: 20px;
+                padding-bottom: 0;
+                margin: 32px 0 0;
+
+                @include box-shadow(0px, 10px, 23px, -16px, rgba(0, 0, 0, 0), false);
+            }
+        }
+
+        h6 {
+            padding-bottom: 6px;
+
+            @include breakpoint("smartphone") {
+                width: 220px;
+                font-size: 16px;
+                line-height: 16px;
+                margin: 0 auto;
+                text-align: center;
+                padding: 17px 0 15px;
+                background: $cinnabar;
+                border-color: $cinnabar;
+                color: $white;
+                cursor: pointer;
+                text-transform: inherit;
+            }
+        }
+
+        ul {
+            &.static-navigation-container {
+                @include breakpoint("medium") {
+                    display: block !important;
+                }
+
+
+                @include breakpoint("smartphone") {
+                    display: none;
+                }
+
+
+                li {
+                    padding-left: 28px;
+                    margin: 8px 0;
+
+                    &.icon-static-page {
+                        background: transparent url("../img/custom-assets/global/static-pages-icon.png") no-repeat 0 0;
+
+                        &.icon--contact {
+                            background-position: 0 1px;
+                        }
+
+                        &.icon--our-stores {
+                            background-position: 0 -46px;
+                        }
+
+                        &.icon--store-finder {
+                            background-position: 0 -94px;
+                        }
+
+                        &.icon--shipping-and-delivery {
+                            background-position: 0 -142px;
+                        }
+
+                        &.icon--faq {
+                            background-position: 0 -190px;
+                        }
+
+                        &.icon--about-kidstuff {
+                            background-position: 0 -239px;
+                        }
+
+                        &.icon--careers {
+                            background-position: 0 -286px;
+                        }
+
+                        &.icon--east-timor-charity {
+                            background-position: 0 -335px;
+                        }
+
+                        &.icon--rewards {
+                            background-position: 0 -432px;
+                        }
+
+                        &.icon--return {
+                            background-position: 0 -480px;
+                        }
+
+                        &.icon--competitions {
+                            background-position: 0 -383px;
+                        }
+
+                        &:hover {
+                            &.icon--contact {
+                                background-position: 0 -23px;
+                            }
+
+                            &.icon--our-stores {
+                                background-position: 0 -70px;
+                            }
+
+                            &.icon--store-finder {
+                                background-position: 0 -118px;
+                            }
+
+                            &.icon--shipping-and-delivery {
+                                background-position: 0 -166px;
+                            }
+
+                            &.icon--faq {
+                                background-position: 0 -214px;
+                            }
+
+                            &.icon--about-kidstuff {
+                                background-position: 0 -263px;
+                            }
+
+                            &.icon--careers {
+                                background-position: 0 -310px;
+                            }
+
+                            &.icon--east-timor-charity {
+                                background-position: 0 -359px;
+                            }
+
+                            &.icon--rewards {
+                                background-position: 0 -456px;
+                            }
+
+                            &.icon--return {
+                                background-position: 0 -504px;
+                            }
+
+                            &.icon--competitions {
+                                background-position: 0 -407px;
+                            }
+                        }
+                    }
+
+                    &.is_active {
+                        a {
+                            color: $harley-davidson-orange;
+                        }
+
+                        &.icon--contact {
+                            background-position: 0 -23px;
+                        }
+
+                        &.icon--our-stores {
+                            background-position: 0 -70px;
+                        }
+
+                        &.icon--store-finder {
+                            background-position: 0 -118px;
+                        }
+
+                        &.icon--shipping-and-delivery {
+                            background-position: 0 -166px;
+                        }
+
+                        &.icon--faq {
+                            background-position: 0 -214px;
+                        }
+
+                        &.icon--about-kidstuff {
+                            background-position: 0 -263px;
+                        }
+
+                        &.icon--careers {
+                            background-position: 0 -310px;
+                        }
+
+                        &.icon--east-timor-charity {
+                            background-position: 0 -359px;
+                        }
+
+                        &.icon--rewards {
+                            background-position: 0 -456px;
+                        }
+
+                        &.icon--return {
+                            background-position: 0 -504px;
+                        }
+
+                        &.icon--competitions {
+                            background-position: 0 -407px;
+                        }
+                    }
+
+                    a {
+                        &:hover {
+                            color: $harley-davidson-orange;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .static-page--content {
+        h1, h2, h3, h4, h5, h6, p {
+            max-width: 544px;
+
+            @include breakpoint("smartphone") {
+                max-width: inherit;
+            }
+        }
+
+        h1 {
+            font-size: 30px;
+            line-height: 32px;
+            color: $harley-davidson-orange;
+            text-align: left;
+            margin: 0 0 24px;
+        }
+
+        h4 {
+            font-size: 18px;
+            line-height: 22px;
+            text-transform: uppercase;
+            padding: 16px 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+
+            span {
+                font-weight: 500;
+            }
+
+            a {
+                color: $harley-davidson-orange;
+                text-decoration: underline;
+
+                &[href^="tel:"] {
+                    color: $midnight;
+                    font-weight: 500;
+                    text-decoration: none;
+                }
+
+                &.button--primary {
+                    color: $white;
+                    font-weight: 500;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        ul, ol {
+            margin-left: 15px;
+
+            li {
+                font-size: 14px;
+                line-height: 22px;
+                padding: 6.5px 0;
+            }
+        }
+
+        ul {
+            li {
+                list-style-type: disc;
+            }
+        }
+
+        ol {
+            li {
+                list-style-type: inherit;
+            }
+        }
+
+        .get-directions {
+            display: table;
+            margin: 42px auto 0;
+            text-align: center;
+
+            p {
+                max-width: inherit;
+            }
+        }
+
+        .responsiv-table {
+            overflow-x: auto;
+            margin: 22px 0 30px;
+        }
+
+        .img--content-wrapper {
+            clear: both;
+            overflow: hidden;
+            text-align: center;
+
+            @include breakpoint("medium") {
+                text-align: left;
+
+                img {
+                    float: left;
+                }
+
+                .content-wrapper {
+                    float: left;
+                    transform: translate(0, 100%);
+                    -webkit-transform: translate(0, 100%);
+
+                    h4 {
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+
+        table {
+            @include breakpoint("medium") {
+                max-width: inherit;
+                width: 100%;
+            }
+
+
+            width: 544px;
+            max-width: 544px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+
+            thead, tbody, tfoot {
+                border: none;
+                background: transparent;
+            }
+
+            tbody {
+                th {
+                    padding: 4px 0 6px;
+                }
+
+                td {
+                    padding: 10px 0 6px;
+                }
+
+                tr {
+                    border-bottom: solid 1px $zircon;
+                    font-size: 14px;
+                    line-height: 22px;
+                    color: $midnight;
+
+                    &:first-child {
+                        border: none;
+                    }
+
+                    &:last-child {
+                        border: none;
+                    }
+
+                    &:nth-child(even) {
+                        background-color: transparent;
+                    }
+
+                    th {
+                        font-weight: 500;
+                        color: $harley-davidson-orange;
+                        text-align: left;
+
+                        &:first-child {
+                            width: 320px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .discontinued-item {
+        text-align: center;
+
+        h1 {
+            margin: 0 auto 24px;
+        }
+
+        p {
+            margin: 0 auto 20px;
+        }
+
+        h1, p {
+            text-align: center;
+        }
+    }
+}
+
+.storemapper-categories {
+    display: none;
+}
+
+#storemapper #storemapper-zip {
+    margin: 0 0 15px;
+}
+
+#storemapper-right {
+    #locate {
+        @include breakpoint("smartphone-large") {
+            display: none;
+        }
+    }
+}
+
+.page {
+    &.static-full-width {
+        h1 {
+            &.page-heading {
+                color: $harley-davidson-orange;
+                font-size: 28px;
+                line-height: 28px;
+                padding: 0 0 60px;
+            }
+        }
+        .members-benefits {
+            max-width: 770px;
+            margin: 0 auto;
+            display: table;
+            width: 100%;
+            p {
+                &.terms {
+                    max-width: 630px;
+                    margin: 68px auto 0;
+                    font-size: 15px;
+                    font-weight: 500;
+                    @include breakpoint("smartphone-large") {
+                        text-align: center;
+                    }
+                }
+            }
+            .container {
+                position: relative;
+                min-height: 306px;
+                .row {
+                    position: absolute;
+                    width: 100%;
+                    -webkit-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    top: 50%;
+                    @include breakpoint("smartphone-large") {
+                        position: relative;
+                        -webkit-transform: none;
+                        transform: none;
+                        top: inherit;
+                    }
+                    h4 {
+                        font-size: 18px;
+                        position: relative;
+                        padding: 0 0 0 72px;
+                        margin: 0 0 0 17px;
+                        @include breakpoint("smartphone-large") {
+                            padding: 0;
+                            margin: 20px auto 30px;
+                            text-align: center;
+                            max-width: 306px;
+                            display: table;
+                        }
+                        span {
+                            z-index: 1;
+                            width: 65px;
+                            height: 65px;
+                            border: solid 2px $midnight;
+                            position: absolute;
+                            -webkit-transform: translateY(-50%);
+                            transform: translateY(-50%);
+                            top: 50%;
+                            left: 0;
+                            @include border-radius(50%);
+                            @include breakpoint("smartphone-large") {
+                                position: relative;
+                                -webkit-transform: none;
+                                transform: none;
+                                top: inherit;
+                                display: table;
+                                margin: 0 auto 15px;
+                            }
+                            img {
+                                position: absolute;
+                                width: auto;
+                                float: left;
+                                max-width: inherit;
+                                -webkit-transform: translate(-50%, -50%);
+                                transform: translate(-50%, -50%);
+                                top: 50%;
+                                left: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+            img {
+                float: right;
+                max-width: 306px;
+                width: 100%;
+                @include breakpoint("smartphone-large") {
+                    float: none;
+                    display: table;
+                    margin: 0 auto;
+                }
+            }
+            .v-align {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                &.right {
+                    right: 0;
+                    left: inherit;
+                }
+                @include breakpoint("smartphone-large") {
+                    position: relative;
+                    -webkit-transform: none;
+                    transform: none;
+                    top: inherit;
+                }
+            }
+        }
+    }
+}

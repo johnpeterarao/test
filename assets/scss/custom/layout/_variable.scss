@@ -1,0 +1,185 @@
+//Font families
+
+$FontAwesome: "FontAwesome";
+$normal: Arial, Helvetica, sans-serif;
+$museo-slab: "museo-slab", serif;
+$montserrat: "Montserrat", $normal;
+
+//select variable
+
+$select-arrow-backgroundImage: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z' fill='#{$check-pip-color}' /%3E%3C/svg%3E");
+
+//Color Vaiables
+
+//white shades
+$white: #fff;
+$azure: #f3f4f4;
+
+//gray shades
+$nobel: #999999;
+$dim-gray: #666666;
+$storm-dust: #62615D;
+$aluminium: #8E9193;
+$graphite: #363125;
+$link-water: #D2D3D4;
+$zircon: #E8E9E9;
+$heather: #BBBDBE;
+
+//black shades
+$black: #000;
+$midnight: #253443;
+$nero: #1a1919;
+$nightrider: #333333;
+
+//red shades
+$persian-red: #c23c3c;
+$harley-davidson-orange: #e2231a;
+$cinnabar: #e14235;
+$bittersweet: #f77166;
+$tutu: #FCE9E8;
+
+//orange shades
+$burnt-orange: #fe7f2d;
+
+//blue shades
+$pattens-blue: #dcecfa;
+$allports: #19647e;
+$heather: #aac1cd;
+$pattens-blue: #DCEDFA;
+
+//green shades
+$pastel-green: #69D66F;
+
+//yellow shades
+$gold: #ffd400;
+
+//section wise Vaiables
+
+//Global Specific Variable
+
+$primary: $museo-slab;
+$secondary: $montserrat;
+
+//Floating Element
+
+//Mixins
+@mixin box-shadow($top, $left, $blur, $radous, $color, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow: inset $top $left $blur $radous $color;
+        -moz-box-shadow: inset $top $left $blur $radous $color;
+        box-shadow: inset $top $left $blur $radous $color;
+    }
+    @else {
+        -webkit-box-shadow: $top $left $blur $radous $color;
+        -moz-box-shadow: $top $left $blur $radous $color;
+        box-shadow: $top $left $blur $radous $color;
+    }
+}
+
+//Border Radius
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+}
+
+//Responsive
+
+@mixin breakpoint($point) {
+    @if $point == large {
+        @media (min-width: 75em) {
+            @content;
+        }
+
+        // 1200px
+    }
+
+    @if $point == medium {
+        @media (min-width: 64em) {
+            @content;
+        }
+
+        // 1024px
+    }
+
+    @if $point == smartphone {
+        @media (max-width: 63.9375em) {
+            @content;
+        }
+
+        // 1023px
+    }
+
+    @if $point == small {
+        @media (min-width: 40em) {
+            @content;
+        }
+
+        // 640px
+    }
+
+    @if $point == extra-small-portrait {
+        @media (max-width: 22.5em) {
+            @content;
+        }
+
+        // 360px
+    }
+
+    @if $point == iphone5-portrait {
+        @media (max-width: 37.5em) {
+            @content;
+        }
+
+        // 400px
+    }
+
+    @if $point == iphone6 {
+        @media (max-width: 30.000em) {
+            @content;
+        }
+
+        // 480px
+    }
+
+    @if $point == extra-small {
+        @media (max-width: 40em) {
+            @content;
+        }
+
+        // 640px
+    }
+
+    @if $point == smartphone-large {
+        @media (max-width: 47.938em) {
+            @content;
+        }
+
+        // 767px
+    }
+
+    @if $point == tablet-medium {
+        @media (max-width: 61.938em) {
+            @content;
+        }
+
+        // 991px
+    }
+
+    @if $point == tablet-large {
+        @media (min-width: 48em) and (max-width: 61.938em) {
+            @content;
+        }
+
+        // 768px - 991px
+    }
+
+    @if $point == ipad {
+        @media (min-width: 48em) and (max-width: 64em) {
+            @content;
+        }
+
+        // 768px - 1024px
+    }
+}

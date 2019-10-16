@@ -1,0 +1,31 @@
+.cart-total-label, .cart-total-value {
+    width: 50%;
+}
+
+.or-text {
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: 19px;
+    float: right;
+
+    @include breakpoint("extra-small") {
+        float: none;
+        display: block;
+        text-align: center;
+    }
+}
+
+.cart-additionalCheckoutButtons {
+    .FloatRight p {
+        @include breakpoint("extra-small") {
+            text-align: center;
+        }
+    }
+
+    @include breakpoint("extra-small") {
+        div {
+            display: table;
+            margin: 0 auto;
+        }
+    }
+}

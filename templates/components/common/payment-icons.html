@@ -1,0 +1,31 @@
+{{#with theme_settings}}
+{{#or show_accept_amex show_accept_discover show_accept_mastercard show_accept_paypal show_accept_visa}}
+<div class="column small-12 medium-4 footer-payment-icons float-right">
+    {{#if show_accept_amex}}
+    <!-- <svg class="footer-payment-icon"><use xlink:href="#icon-logo-american-express"></use></svg> -->
+    <i class="fa fa-cc-amex" aria-hidden="true"></i>
+    {{/if}}
+    
+    {{#if show_accept_paypal}}
+    <!--<svg class="footer-payment-icon"><use xlink:href="#icon-logo-paypal"></use></svg>-->
+    <i class="fa fa-cc-paypal" aria-hidden="true"></i>
+    {{/if}}
+
+    {{#if show_accept_visa}}
+    <!-- <svg class="footer-payment-icon"><use xlink:href="#icon-logo-visa"></use></svg> -->
+    <i class="fa fa-cc-visa" aria-hidden="true"></i>
+    {{/if}}
+    
+    {{#if show_accept_mastercard}}
+    <!-- <svg class="footer-payment-icon"><use xlink:href="#icon-logo-mastercard"></use></svg> -->
+    <i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+    {{/if}}
+    
+    {{#if show_accept_discover}}
+    <svg class="footer-payment-icon"><use xlink:href="#icon-logo-discover"></use></svg>
+    {{/if}}
+</div>
+{{/or}}
+{{/with}}
+
+

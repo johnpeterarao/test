@@ -1,0 +1,164 @@
+.block--listing-top {
+    margin-bottom: 57px;
+
+    @include breakpoint("small") {
+        padding: 0 62px;
+    }
+
+
+    @include breakpoint("smartphone") {
+        margin-bottom: 25px;
+    }
+
+
+    h1 {
+        color: $harley-davidson-orange;
+        margin-bottom: 25px;
+    }
+
+    img {
+        -moz-transform: scale(-1, -1);
+        -o-transform: scale(-1, -1);
+        -webkit-transform: scale(-1, -1);
+        transform: scale(-1, -1);
+    }
+}
+
+.actionBar-section {
+    @include breakpoint("smartphone") {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+
+
+    @include breakpoint("extra-small") {
+        width: 50%;
+        text-align: right;
+        padding-left: 9px;
+    }
+
+
+    .form-field {
+        border: none;
+
+        .form-label {
+            font-family: $secondary;
+            font-size: 12px;
+            color: $aluminium;
+            margin-right: 8px;
+
+            @include breakpoint("smartphone") {
+                display: none;
+            }
+        }
+
+        .form-input {
+            width: 144px;
+            height: auto;
+            border: 1px solid $link-water;
+            padding: 13px 25px 13px 12px;
+
+            @include border-radius(2px);
+
+            @include breakpoint("extra-small") {
+                width: 100%;
+            }
+        }
+
+       .form-select {
+            width: 144px;
+            height: auto;
+            border: 1px solid $link-water;
+            padding: 10px 25px 13px 12px;
+
+            @include border-radius(2px);
+
+            @include breakpoint("extra-small") {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.pagination {
+    @include breakpoint("medium") {
+        padding-top: 12px;
+    }
+
+
+    .pagination-list {
+        @include breakpoint("medium") {
+            text-align: left;
+        }
+
+
+        .pagination-item {
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            border: none;
+            margin-left: 3px;
+
+            a {
+                color: $heather;
+                cursor: pointer;
+                padding: 0;
+                width: 28px;
+                height: 28px;
+                line-height: 28px;
+
+                @include border-radius(50%);
+
+                &:hover {
+                    border: none;
+                    background: $pattens-blue;
+                    color: $graphite;
+                    padding: 0;
+
+                    @include border-radius(50%);
+                }
+            }
+
+            &.pagination-item--current {
+                background: $pattens-blue;
+
+                a {
+                    color: $graphite;
+                }
+
+                @include border-radius(50%);
+            }
+
+            &.pagination-item--previous, &.pagination-item--next {
+                display: none;
+            }
+        }
+    }
+}
+
+.card-figure {
+    min-height: 224px;
+
+    a {
+        display: flex;
+        display: -webkit-flex;
+        min-height: 224px;
+    }
+}
+
+.card-figcaption {
+    &.card--quick-view {
+        .card-figcaption-body {
+            position: relative;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            transform-style: preserve-3d;
+
+            a {
+                min-height: inherit;
+            }
+        }
+    }
+}

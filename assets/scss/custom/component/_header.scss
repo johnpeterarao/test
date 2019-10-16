@@ -1,0 +1,378 @@
+.header {
+    border: none;
+    background: none;
+
+    @include breakpoint("smartphone") {
+        @include box-shadow(0px, 7px, 20px, -6px, rgba(0, 0, 0, 0.2), false);
+        background: $white;
+    }
+
+    .strip-banner {
+        background: $cinnabar;
+        color: $white;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        padding: 8px;
+
+        @include breakpoint("iphone6"){
+            font-size: 13px;
+            line-height: 18px; 
+        }
+
+        @include breakpoint("extra-small-portrait"){
+            font-size: 11px;
+            line-height: 18px; 
+        }
+    }
+    .custom-container-white {
+        background-color: transparent;
+    }
+}
+
+//Header Top
+.banner-top-header {
+    background: $azure;
+
+    .navUser {
+        padding: 0;
+        @include breakpoint("smartphone") {
+            max-width: 100px;
+        }
+        .navUser-action--cart-desktop {
+            @include breakpoint("smartphone") {
+                display: none;
+            }
+        }
+        .navUser-action--cart-mobile {
+            display: none;
+            @include breakpoint("smartphone") {
+                display: block;
+            }
+        }
+        ul {
+            &.navlist--webpage {
+                li {
+                    padding: 7px 8px;
+
+                    &:first-child {
+                        padding-left: 0;
+                    }
+
+                    &:last-child {
+                        padding-right: 0;
+                    }
+
+                    a {
+                        padding: 0;
+                        font-family: $secondary;
+                        font-size: 12px;
+                        font-weight: 400;
+                        color: $midnight;
+                        text-transform: inherit;
+                    }
+                }
+            }
+        }
+
+        ul {
+            &.navUser-section {
+                li {
+                    padding: 7px 4px;
+                    text-transform: uppercase;
+
+                    //display: block;
+
+                    &.navUser-item--wishlists {
+                        padding-right: 20px;
+                        display: block;
+
+                        @include breakpoint("smartphone") {
+                            padding-right: 0;
+                        }
+
+
+                        span {
+                            @include breakpoint("smartphone") {
+                                display: none;
+                            }
+                        }
+
+                        img {
+                            position: relative;
+                            top: 0px;
+                            margin-right: 5px;
+                        }
+                    }
+
+                    &.navUser-item--account {
+                        a {
+                            &:first-child {
+                                margin-right: 5px;
+                            }
+
+                            &:last-child {
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+
+                    &.navUser-item--cart {}
+
+                    .previewCart {
+                        ul {
+                            &.previewCartList {
+                                li {
+                                    &.previewCartItem {
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.navUser-item--cart {
+                        padding-left: 20px;
+
+                        @include breakpoint("smartphone") {
+                            padding-right: 10px;
+                        }
+
+
+                        img {
+                            position: relative;
+                            top: -1px;
+                            margin-right: 2px;
+                        }
+
+                        span {
+                            &.countPill--positive.cart-quantity {
+                                margin: 0;
+                            }
+                        }
+                    }
+
+                    a,
+                    span {
+                        font-family: $secondary;
+                        font-size: 12px;
+                        font-weight: 400;
+                        padding: 0;
+                        color: $midnight;
+                    }
+
+                    a {
+                        &.button {
+                            padding: 13px 16px 11px;
+                            color: $bittersweet;
+
+                            &:hover {
+                                border-color: $bittersweet;
+                            }
+
+                            &.button--primary {
+                                color: $white;
+                            }
+                        }
+                    }
+
+                    .navUser-or {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    &.navUser-item--account {
+                        a {
+                            font-weight: 600;
+                            color: $harley-davidson-orange;
+
+                            &:after {
+                                border-color: $harley-davidson-orange;
+                            }
+                        }
+                    }
+
+                    .navUser-or+.navUser-action {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Header Middle
+.home-search {
+    width: 224px;
+    padding: 0;
+    position: relative;
+    margin: 12px 0 0;
+
+    .home-search--button {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        left: 0;
+        top: 15px;
+        background: url("../img/custom-assets/header/search_icon.png") no-repeat 0 0;
+        border: none;
+        text-indent: -9999px;
+    }
+
+    .home-search--text {
+        width: 100%;
+        border: none;
+        border-bottom: solid 1px $midnight;
+        font-family: $secondary;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 300;
+        color: $nobel;
+        padding: 14px 24px;
+    }
+}
+
+.header-logo {
+    @include breakpoint("medium") {
+        /*margin: 16px 0 15px;*/
+        margin: 0;
+        padding: 16px 0 15px;
+    }
+
+
+    a {
+        padding: 12px 0;
+
+        @include breakpoint("medium") {}
+    }
+
+    img {
+        width: 111px;
+        max-height: inherit;
+
+        @include breakpoint("medium") {
+            max-width: 189px;
+            width: inherit;
+        }
+    }
+}
+
+//Find Store Button
+.button {
+    &.button--find-store {
+        padding: 8px 12px 8px;
+        margin: 13px 0 0;
+    }
+}
+
+//QuickSearch
+.dropdown--quickSearch {
+    @include breakpoint("smartphone") {
+        display: none;
+    }
+
+
+    &.is-open {
+        //top: 0 !important;
+
+        //height: 100%;
+        background: $white;
+
+        //position: fixed;
+        @include box-shadow(4px, 27px, 24px, -25px, rgba(0, 0, 0, 0.4), false);
+
+        @include breakpoint("smartphone-large") {
+            @include box-shadow(0px, 15px, 12px, -15px, rgba(0, 0, 0, 0.3), false);
+        }
+
+
+        .card--alternate {
+            &:hover {
+                border-color: transparent;
+
+                .card-body {
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+    .form {
+        max-width: inherit;
+
+        &.quick-search {
+            border-bottom: 2px solid $white-smoke;
+            padding: 15px 0;
+
+            .form-field {
+                padding: 0 145px 0 45px;
+                position: relative;
+            }
+
+            .form-input {
+                font-family: $primary;
+                font-weight: 300;
+                background: $white;
+                border: none;
+                font-size: 25px;
+                line-height: 35px;
+                padding: 0;
+            }
+
+            .quick-search-button {
+                background: $white;
+                border: 1px solid $cinnabar;
+                color: $cinnabar;
+                font-family: $primary;
+                font-weight: 500;
+                text-transform: uppercase;
+                position: absolute;
+                top: 0;
+                right: 61px;
+                padding: 11px 15px 9px;
+
+                &:hover {
+                    background: $cinnabar;
+                    color: $white;
+                }
+            }
+
+            .modal-close {
+                //font-family: $MontserratSemibold;
+                top: 0;
+                right: 0;
+                width: 35px;
+                height: 35px;
+
+                span {
+                    font-size: 32px;
+                    line-height: 35px;
+                    display: block;
+                }
+            }
+
+            .search-icon {
+                position: absolute;
+                left: 10px;
+                top: -1px;
+                font-size: 19px;
+                line-height: 35px;
+                font-weight: normal;
+                color: $cinnabar;
+            }
+        }
+    }
+}
+
+.quickSearchResults {
+    .modal-close {
+        display: none;
+    }
+}
+
+.header-logo {
+    @include breakpoint("smartphone") {
+        margin: 0 auto;
+        display: table;
+    }
+}

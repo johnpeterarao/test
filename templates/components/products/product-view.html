@@ -1,0 +1,421 @@
+<div class="productView">
+    {{#each product.reviews.messages}}
+        {{#if error}}
+            {{> components/common/alert-error error}}
+        {{/if}}
+        {{#if success}}
+            {{> components/common/alert-success success}}
+        {{/if}}
+    {{/each}}
+
+    
+
+    <!--<section class="productView-images" data-image-gallery>
+        <figure class="productView-image"
+                data-image-gallery-main
+                data-zoom-image="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}"
+                >
+            <a href="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}">
+                <img class="productView-image--default"
+                     src="{{getImage product.main_image 'product_size' (cdn theme_settings.default_image_product)}}"
+                     alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}" data-main-image>
+            </a>
+        </figure>
+        <ul class="productView-thumbnails">
+            {{#each product.images}}
+                <li class="productView-thumbnail">
+                    <a
+                        class="productView-thumbnail-link"
+                        href="{{getImage this 'product_size' (cdn ../theme_settings.default_image_product)}}"
+                        data-image-gallery-item
+                        data-image-gallery-new-image-url="{{getImage this 'product_size' (cdn ../theme_settings.default_image_product)}}"
+                        data-image-gallery-zoom-image-url="{{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}}">
+                        <img src="{{getImage this 'productthumb_size' (cdn ../theme_settings.default_image_product)}}" alt="{{this.alt}}" title="{{this.alt}}">
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+        
+        
+    </section>-->
+    
+    <section class="productView-images" data-image-gallery>
+    <section class="productCarousel" 
+    data-slick='{
+        "dots": true,
+        "infinite": true,
+        "mobileFirst": true,
+        "slidesToShow": 1,
+        "slidesToScroll": 1,
+        "responsive": [
+            {
+                "breakpoint": 1260,
+                "settings": {
+                    "slidesToScroll": 1,
+                    "slidesToShow": 1
+                }
+            },
+            {
+                "breakpoint": 800,
+                "settings": {
+                    "slidesToScroll": 1,
+                    "slidesToShow": 1
+                }
+            },
+            {
+                "breakpoint": 550,
+                "settings": {
+                    "slidesToScroll": 1,
+                    "slidesToShow": 1
+                }
+            }
+        ]
+    }'
+>
+    {{#each product.images}}
+    <div class="productCarousel-slide">
+        <figure class="productView-image" >
+        	<a href="{{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}}">
+             <img class="productView-image--default" src="{{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}}" alt="{{this.alt}}" title="{{this.alt}}">
+          </a>
+        </figure>
+    </div>
+    {{/each}}
+	</section>
+	</section>
+
+		<section class="productView-details">
+        <div class="productView-product">
+        		<h5 {{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
+                <!--<a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}></span></a>-->
+                {{product.brand.name}}
+            </h5>
+            <h2 {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h2>
+
+            
+            {{#if product.call_for_price}}
+                <p class="productView-price">
+                    <span>{{product.call_for_price}}</span>
+                </p>
+            {{/if}}
+            <div class="productView-price">
+                {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                    {{> components/products/price price=product.price schema_org=schema}}
+                {{else}}
+                    {{> components/common/login-for-pricing}}
+                {{/or}}
+            </div>
+            <!-- Begin Afterpay Stencil Snippet for BigCommerce v1.0.8 -->
+            {{#if product.price.with_tax}}
+              {{#if product.price.with_tax.value ">=" 0.04}}
+                {{#if product.price.with_tax.value "<=" 1000.00}}
+                  <p class="afterpay-paragraph" style="display:block; font-size:14px; text-transform:none;">
+                    or make 4 interest-free payments of 
+                    <strong class="afterpay-instalments">${{toFixed (divide product.price.with_tax.value 4) 2}}&nbsp;AUD</strong>
+                    fortnightly with 
+                    <a style="display:inline-block; margin-bottom:10px;" target="_blank" href="https://www.afterpay.com/terms">
+                      <img style="vertical-align:middle;" src="https://static.afterpay.com/integration/product-page/logo-afterpay-colour.png" srcset="https://static.afterpay.com/integration/product-page/logo-afterpay-colour.png 1x, https://static.afterpay.com/integration/product-page/logo-afterpay-colour@2x.png 2x, https://static.afterpay.com/integration/product-page/logo-afterpay-colour@3x.png 3x" width="100" height="21" alt="Afterpay">
+                      <span style="font-size:12px; display:inline-block;"> <u>More info</u> </span>  
+                    </a>
+                  </p>
+                {{/if}}
+              {{/if}}
+            {{else}}
+              {{#if product.price.without_tax.value ">=" 0.04}}
+                {{#if product.price.without_tax.value "<=" 1000.00}}
+                  <p class="afterpay-paragraph" style="display:block; font-size:14px; text-transform:none;">
+                    or make 4 interest-free payments of 
+                    <strong class="afterpay-instalments">${{toFixed (divide product.price.without_tax.value 4) 2}}&nbsp;AUD</strong>
+                    fortnightly with 
+                    <a style="display:inline-block; margin-bottom:10px;" target="_blank" href="https://www.afterpay.com/terms">
+                      <img style="vertical-align:middle;" src="https://static.afterpay.com/integration/product-page/logo-afterpay-colour.png" srcset="https://static.afterpay.com/integration/product-page/logo-afterpay-colour.png 1x, https://static.afterpay.com/integration/product-page/logo-afterpay-colour@2x.png 2x, https://static.afterpay.com/integration/product-page/logo-afterpay-colour@3x.png 3x" width="100" height="21" alt="Afterpay">
+                      <span style="font-size:12px; display:inline-block;"> <u>More info</u> </span>  
+                    </a>
+                  </p>
+                {{/if}}
+              {{/if}}
+            {{/if}}
+            <script type="text/javascript">
+              if (typeof Afterpay === 'undefined') {
+                var Afterpay = {};
+                Afterpay.loadScript = function(url, callback) {
+                  var script = document.createElement('script');
+                  script.type = 'text/javascript';
+                  if (script.readyState) { // I.E.
+                    script.onreadystatechange = function() {
+                      if (script.readyState == 'loaded' || script.readyState == 'complete') {
+                        script.onreadystatechange = null;
+                        callback();
+                      }
+                    };
+                  } else { // Others
+                    script.onload = function() {
+                      callback();
+                    };
+                  }
+                  script.src = url;
+                  document.getElementsByTagName('head')[0].appendChild(script);
+                };
+                Afterpay.$elements = null;
+                Afterpay.interval = null;
+                Afterpay.init = function($) {
+                  Afterpay.$elements = $(".productView .price");
+                  if (Afterpay.$elements.length > 0) {
+                    Afterpay.interval = setInterval(function() {
+                      Afterpay.$elements.each(function(index, element) {
+                        var $element = $(element);
+                        var $productView = $element.closest(".productView");
+                        var amount = $element.text().replace("$", "");
+                        if (amount >= 0.04 && amount <= 1000.00) {
+                          $productView.find(".afterpay-paragraph").show();
+                          var instalment_amount_in_cents = Math.round((amount / 4) * 100);
+                          var instalment_amount = (instalment_amount_in_cents / 100).toFixed(2);
+                          $productView.find(".afterpay-instalments").html("$" + instalment_amount + "&nbsp;AUD");
+                        } else {
+                          $productView.find(".afterpay-paragraph").hide();
+                        }
+                      });
+                    }, 500);
+                  }
+                };
+              } else {
+                if (Afterpay.interval !== null) {
+                  clearInterval(Afterpay.interval);
+                }
+              }
+              if (typeof jQuery_1_12_4 === 'function') {
+                Afterpay.init(jQuery_1_12_4);
+              } else if (typeof jQuery === 'undefined' || parseFloat(jQuery.fn.jquery) < 1.7) {
+                var jQuery_1_12_4;
+                Afterpay.loadScript('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', function() {
+                  jQuery_1_12_4 = jQuery.noConflict(true);
+                  Afterpay.init(jQuery_1_12_4);
+                });
+              } else {
+                Afterpay.init(jQuery);
+              }
+            </script>
+            <!-- End Afterpay Stencil Snippet for BigCommerce v1.0.8 -->
+
+            <div class="productView-rating"{{#if schema}} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"{{/if}}>
+                {{#if settings.show_product_rating}}
+                    {{#if product.num_reviews '>' 0}}
+                        {{#if schema}}
+                            <meta itemprop="ratingValue" content="{{product.rating}}">
+                            <meta itemprop="ratingCount" content="{{product.num_reviews}}">
+                            <meta itemprop="reviewCount" content="{{product.num_reviews}}">
+                        {{/if}}
+                    {{/if}}
+                    {{> components/products/ratings rating=product.rating}}
+                    <span class="productView-reviewLink">
+                        {{#if product.num_reviews '>' 0}}
+                            <a href="{{product.url}}#product-reviews">
+                                {{lang 'products.reviews.link_to_review' total=product.num_reviews}}
+                            </a>
+                        {{else}}
+                            {{lang 'products.reviews.link_to_review' total=product.num_reviews}}
+                        {{/if}}
+                    </span>
+                {{/if}}
+                {{#if settings.show_product_reviews}}
+                    <span class="productView-reviewLink">
+                        <a href="{{product.url}}{{#if is_ajax}}#writeReview{{/if}}"
+                           {{#unless is_ajax }}data-reveal-id="modal-review-form"{{/unless}}>
+                           {{lang 'products.reviews.new'}}
+                        </a>
+                    </span>
+                    {{> components/products/modals/writeReview}}
+                {{/if}}
+            </div>
+            {{product.detail_messages}}
+            <dl class="productView-info">
+                {{#if product.sku}}
+                    <dt class="productView-info-name">{{lang 'products.sku'}}</dt>
+                    <dd class="productView-info-value" data-product-sku>{{product.sku}}</dd>
+                {{/if}}
+                {{#if product.upc}}
+                    <dt class="productView-info-name">{{lang 'products.upc'}}</dt>
+                    <dd class="productView-info-value" data-product-upc>{{product.upc}}</dd>
+                {{/if}}
+                {{#if product.condition}}
+                    <dt class="productView-info-name">{{lang 'products.condition'}}</dt>
+                    <dd class="productView-info-value">{{product.condition}}</dd>
+                {{/if}}
+                {{#if product.availability}}
+                    <dt class="productView-info-name">{{lang 'products.availability'}}</dt>
+                    <dd class="productView-info-value">{{product.availability}}</dd>
+                {{/if}}
+                {{#if product.weight}}
+                    <dt class="productView-info-name">{{lang 'products.weight'}}</dt>
+                    <dd class="productView-info-value" data-product-weight>{{product.weight}}</dd>
+                {{/if}}
+                {{#if product.min_purchase_quantity}}
+                    {{!--<dt class="productView-info-name">{{lang 'products.min_purchase_quantity'}}</dt>
+                    <dd class="productView-info-value">{{lang 'products.purchase_units' quantity=product.min_purchase_quantity}}</dd>--}}
+                {{/if}}
+                {{#if product.max_purchase_quantity}}
+                    {{!--<dt class="productView-info-name">{{lang 'products.max_purchase_quantity'}}</dt>
+                    <dd class="productView-info-value">{{lang 'products.purchase_units' quantity=product.max_purchase_quantity}}</dd>--}}
+                {{/if}}
+                {{#if product.gift_wrapping_available}}
+                    <dt class="productView-info-name">{{lang 'products.gift_wrapping'}}</dt>
+                    <dd class="productView-info-value">{{lang 'products.gift_wrapping_available'}}</dd>
+                {{/if}}
+                {{#if product.shipping}}
+                    {{#if product.shipping.calculated}}
+                        <dt class="productView-info-name">{{lang 'products.shipping'}}</dt>
+                        <dd class="productView-info-value">{{lang 'products.shipping_calculated'}}</dd>
+                    {{else}}
+                        {{#if product.shipping.price.value '===' 0}}
+                            <dt class="productView-info-name">{{lang 'products.shipping'}}</dt>
+                            <dd class="productView-info-value">{{lang 'products.shipping_free'}}</dd>
+                        {{else}}
+                            <dt class="productView-info-name">{{lang 'products.shipping'}}</dt>
+                            <dd class="productView-info-value">{{lang 'products.shipping_fixed' amount=product.shipping.price.formatted}}</dd>
+                        {{/if}}
+                    {{/if}}
+                {{/if}}
+                {{#if product.bulk_discount_rates.length}}
+                    <dt class="productView-info-name">{{lang 'products.bulk_pricing.title'}}</dt>
+                    <dd class="productView-info-value">
+                        <a href="{{product.url}}"
+                            {{#unless is_ajax }}data-reveal-id="bulkPricingModal" {{/unless}}>
+                            {{lang 'products.bulk_pricing.view'}}
+                        </a>
+                    </dd>
+
+                    <div id="bulkPricingModal" class="modal modal--small" data-reveal>
+                        <div class="modal-header">
+                            <h2 class="modal-header-title">{{lang 'products.bulk_pricing.modal_title'}}</h2>
+                            <a href="#" class="modal-close" aria-label="Close"><span aria-hidden="true">&#215;</span></a>
+                        </div>
+                        <div class="modal-body">
+                            <p>{{lang 'products.bulk_pricing.instructions'}}</p>
+                            <ul>
+                            {{#each product.bulk_discount_rates}}
+                                <li>
+                                    {{lang 'products.bulk_pricing.range' min=min max=max}}
+                                    {{#if type '===' 'percent'}}
+                                        {{lang 'products.bulk_pricing.percent' discount=discount.formatted}}
+                                    {{/if}}
+                                    {{#if type '===' 'fixed'}}
+                                        {{lang 'products.bulk_pricing.fixed' discount=discount.formatted}}
+                                    {{/if}}
+                                    {{#if type '===' 'price'}}
+                                        {{lang 'products.bulk_pricing.price' discount=discount.formatted}}
+                                    {{/if}}
+                                </li>
+                            {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                {{/if}}
+
+                {{#each product.custom_fields}}
+                    <dt class="productView-info-name" style="display:none;">{{name}}:</dt>
+                    <dd class="productView-info-value" style="display:none;">{{{value}}}</dd>
+                {{/each}}
+            </dl>
+        </div>
+    </section>
+
+    <section class="productView-details">
+        <div class="productView-options">
+            {{#if product.release_date }}
+                <p>{{product.release_date}}</p>
+            {{/if}}
+            <form class="form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data"
+                  data-cart-item-add>
+                <input type="hidden" name="action" value="add">
+                <input type="hidden" name="product_id" value="{{product.id}}"/>
+                    {{#each product.customizations}}
+                        {{{dynamicComponent 'components/products/customizations'}}}
+                    {{/each}}
+               
+                {{#if product.event_date}}
+                    {{> components/products/event-date}}
+                {{/if}}
+                <div class="form-field form-field--stock{{#unless product.stock_level}} u-hiddenVisually{{/unless}}">
+                    <label class="form-label form-label--alternate">
+                        {{lang 'products.current_stock'}}
+                        <span data-product-stock>{{product.stock_level}}</span>
+                    </label>
+                </div>
+                  
+                {{#if product.can_purchase}}
+                    {{> components/products/add-to-cart}}
+                {{/if}}
+               
+                {{#if product.out_of_stock}}
+                    {{#if product.out_of_stock_message}}
+                        {{> components/common/alert-error product.out_of_stock_message}}
+                    {{else}}
+                        {{> components/common/alert-error (lang 'products.sold_out')}}
+                    {{/if}}
+                {{/if}}
+            </form>
+            {{#if settings.show_wishlist}}
+                <form class="form" method="post" action="{{product.add_to_wishlist_url}}" data-wishlist-add>
+                    <div class="form-action add-to-wishlist">
+                    		<img src="{{cdn '/assets/img/custom-assets/detail/wishlist-red.png'}}" />
+                        <input type="hidden" name="variation_id" value="">
+                        <input class="button" type="submit" value="{{lang 'account.wishlists.add_item'}}">
+                    </div>
+                </form>
+            {{/if}}
+        </div>
+        {{> components/common/share}}
+        {{{snippet 'product_details'}}}
+        
+        <!-- instockalerts-->
+        <!-- add jquery if it is not included -->
+        <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+            <div id="instock-notify-box" 
+            data-button-background-color="#212121" 
+            data-button-font-color="#ffffff" 
+            data-id="{{product.id}}" 
+            data-title="{{product.title}}" 
+            data-stock_level="{{product.stock_level}}" 
+            data-out_of_stock="{{product.out_of_stock}}" 
+            data-url="{{settings.base_url}}" 
+            data-can_purchase="{{product.can_purchase}}"></div>
+        <script type="text/javascript" src="//instockalerts.co/instocka_app/public/assets/js/instockalerts.min.js"></script> -->
+        <!-- /. instockalerts-->
+    </section>
+
+    
+</div>
+<div class="productView-description small-12"{{#if schema}} itemprop="description"{{/if}}>
+        <ul class="tabs" data-tab>
+            <li class="tab is-active">
+                <a class="tab-title" href="#tab-description">{{lang 'products.description'}}</a>
+            </li>
+            {{#if product.warranty}}
+                <li class="tab">
+                    <a class="tab-title" href="#tab-warranty">{{lang 'products.warranty'}}</a>
+                </li>
+            {{/if}}
+        </ul>
+        <div class="tabs-contents">
+            <div class="tab-content is-active" id="tab-description">
+            		{{#if product.videos.list.length}}
+                    {{> components/products/videos product.videos}}
+                {{/if}}	
+                {{{product.description}}}
+                {{{snippet 'product_description'}}}
+            </div>
+           {{#if product.warranty}}
+               <div class="tab-content" id="tab-warranty">
+                   {{{product.warranty}}}
+               </div>
+           {{/if}}
+        </div>
+    </div>
+
+<div id="previewModal" class="modal" data-reveal>
+    <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
+        <span aria-hidden="true">&#215;</span>
+    </a>
+    <div class="modal-content"></div>
+    <div class="loadingOverlay"></div>
+</div>

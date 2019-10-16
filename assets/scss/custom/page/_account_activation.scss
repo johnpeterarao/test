@@ -1,0 +1,34 @@
+.account {
+    &.account--fixed {
+        .form-actions {
+            padding: 0 8px;
+        }
+    }
+
+    .account-body {
+        @include breakpoint("tablet-large") {
+            margin: 0;
+        }
+    }
+
+    .productGrid {
+        @include breakpoint("tablet-large") {
+            margin: 0;
+        }
+
+
+        .card {
+            margin-bottom: 16px;
+        }
+
+        .card-figcaption-body, .button {
+            width: 100%;
+        }
+
+        .form {
+            @include breakpoint("smartphone-large") {
+                margin: 0;
+            }
+        }
+    }
+}

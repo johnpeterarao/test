@@ -1,0 +1,446 @@
+//Hero Slider
+.heroCarousel {
+    margin: 26px 0 70px;
+
+    @include breakpoint("smartphone") {
+        margin: 0 0 42px;
+    }
+
+
+    &.slick-slider {
+        .slick-next, .slick-prev {
+            display: none !important;
+        }
+
+        .slick-dots {
+            bottom: 5px;
+
+            li {
+                background: transparent url("../img/custom-assets/hero-slider/inactive.png") no-repeat 0 0;
+
+                &.slick-active {
+                    background: transparent url("../img/custom-assets/hero-slider/active.png") no-repeat 0 0;
+                }
+
+                button {
+                    border: none;
+
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.featured-categories-wrapper {
+    margin: 75px 0 0;
+
+    h2 {
+        &.page-heading {
+            margin: 0 0 16px;
+        }
+    }
+
+    ul {
+        &.featured-categories {
+            list-style-type: none;
+            margin: 0 -8px 14px;
+
+            li {
+                @include breakpoint("smartphone") {
+                    max-width: inherit;
+                    margin-bottom: 16px;
+                }
+
+
+                @include box-shadow(0, 15px, 14px, -12px, rgba(0, 0, 0, 0.3), false);
+
+                margin-bottom: 24px;
+                position: relative;
+
+                h3, .button {
+                    position: absolute;
+                    z-index: 1;
+                    margin: 0;
+                }
+
+                h3 {
+                    font-size: 25px;
+                    line-height: 31px;
+                    text-transform: uppercase;
+                    color: $nightrider;
+                    padding: 0;
+                    left: 32px;
+                    top: 20px;
+                    max-width: 200px;
+
+                    @include breakpoint("iphone5-portrait") {
+                        font-size: 14px;
+                        line-height: 14px;
+                        max-width: 105px;
+                        left: 20px;
+                        top: 12px;
+                    }
+                }
+
+                .button {
+                    left: 32px;
+                    right: 32px;
+                    bottom: 23px;
+
+                    @include breakpoint("iphone5-portrait") {
+                        left: 20px;
+                        right: 20px;
+                        bottom: 12px;
+                        padding: 7px;
+                        font-size: 9px;
+                        line-height: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .featured-categories--gift-finder-link {
+        font-weight: 500;
+        display: table;
+        margin: 0 auto 5px;
+        text-align: center;
+
+        span {
+            display: block;
+            font-family: $primary;
+            padding: 10px 0 0;
+
+            a {
+                color: $cinnabar;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+/*~~~~~~~~~~10-17-2018~~~~~~*/
+
+.homeOurBrands{
+    h2.page-heading{
+        margin-bottom: 0;
+    }
+}
+/*~~~~~~~~~~chirstmas-offer~~~~~~*/
+.chirstmas-offer{
+    .chirstmas-offer-cont{
+        position: relative;
+        margin-bottom: 70px;
+        &:before, &:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .baby_felix, .shop_e_gifts, .kidstuff_countdown{
+            box-shadow: 1px 1px 20px rgba(0,0,0,.30);
+        }
+        .baby_felix{
+           /* background: url("../img/custom-assets/chirstmas/baby_felix.jpg") no-repeat 0 0;
+            width: 552px;
+            height: 537px;*/
+            max-width: 545px;
+            width: 58%;;
+            float: left;
+            border: 4px solid #c39c68;
+            box-sizing: border-box;
+            overflow: hidden;
+            @include breakpoint("extra-small"){
+                width: 100%;
+                float: none;
+                max-width: inherit;
+                min-height: inherit !important;
+            }
+            a{
+                display: block;
+                background: #ce3a2b;
+                color: $white;
+                padding: 14px 20px;
+                font-size: 16px;
+                text-transform: uppercase;
+                font-weight: bold;
+                text-align: center;
+                max-width: 210px;
+                margin: 30px auto;
+                &:hover{
+                    opacity: 1;
+                    color: $black;
+                }
+            }
+        }
+        .right{
+            float: right;
+            max-width: 390px;
+            width: 41%;
+            @include breakpoint("extra-small"){
+                width: 100%;
+                float: none;
+                max-width: inherit;
+                margin-top: 20px;
+                .kidstuff_countdown{
+                    margin-top: 20px;
+                }
+            }
+        }
+        .shop_e_gifts{
+          /*  background: url("../img/custom-assets/chirstmas/shop_e_gifts.jpg") no-repeat 0 0;
+            width: 388px;
+            height: 265px;*/
+            background: $white;
+            img{
+                position: relative;
+                z-index: 1;
+                width: 100%;
+            }
+            a.shop-e-gifts-btn{
+                display: block;
+                background: $white;
+                padding: 10px 20px;
+                font-size: 15px;
+                text-transform: uppercase;
+                font-weight: bold;
+                text-align: center;
+                color: #273340;
+                border: 4px solid #c39c68;
+                max-width: 200px;
+                margin: -60px auto 0 auto;
+                z-index: 2;
+                position: relative;
+                &:hover{
+                    opacity: 1;
+                    color: $persian-red;
+                }
+            }
+            p{
+                display: block;
+                margin: 10px 0 0 0;
+                padding: 10px 20px;
+                font-size: 14px;
+                line-height: 15px;
+                font-style: italic;
+                text-align: center;
+                position: relative;
+                z-index: 2;
+                background: $white;
+                a{
+                    display: inline-block;
+                    font-weight: bold;
+                    line-height: 15px;
+                    @include breakpoint("extra-small"){
+                        display: block;
+                        margin: 5px 0;
+                    }
+                }
+            }
+        }
+        .kidstuff_countdown{
+          /*  background: url("../img/custom-assets/chirstmas/scroll.jpg") no-repeat 0 0;
+            width: 388px;
+            height: 265px;*/
+            margin: 10px 0 0 0;
+            background: #c39c68 url('../img/custom-assets/chirstmas/sand_watch.png') center 20px no-repeat;
+            padding: 100px 5px 0 5px;
+            width: 100%;
+            height: 266px;;
+            overflow: hidden;
+            p.heading{
+                display: block;
+                width: 100%;
+                margin: 0 auto;
+                padding: 10px 5px;
+                text-align: center;
+                text-transform: uppercase;
+                color: #283442;
+                font-size: 18px;
+                line-height: 20px;
+                font-family: $museo-slab;
+                font-weight: 500;
+                position: relative;
+                max-width: 280px;
+                a{
+                    color: #000;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .events_date{
+                margin-top: 10px;
+                padding: 0;
+                p{
+                    display: block;
+                    width: 100%;
+                    margin: 10px 5px;
+                    padding-bottom: 10px;
+                    min-height: 70px;
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: $white;
+                    font-size: 15px;
+                    line-height: 18px;
+                    font-family: $museo-slab;
+                    font-weight: 500;
+                }
+                .slick-dots{
+                    display: block !important;
+                    bottom: 0;  
+                    @include breakpoint("medium"){
+                        bottom: 10px;    
+                    }
+                    li{
+                        width: 10px;
+                        height: 10px;
+                        padding: 0;
+                        margin: 0 5px;
+                        button{
+                            width: 100%;
+                            height: 100%;
+                            border: none;
+                            &:before{
+                                opacity: 1;
+                                content:'';
+                                width: 100%;
+                                height: 100%;
+                                border: 2px solid #283442;
+                            }
+                        }
+                        &.slick-active{
+                           opacity: 1;
+                           button{
+                                &:before{
+                                    opacity: 1;
+                                    background: #283442;
+                                }
+                            } 
+                        }
+                    }
+                }
+            }
+            ul.slider{
+                margin: 0;
+                position: relative;
+                height: 100%;
+                li.slick-slide{
+                    img{
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    p{
+                        display: table;
+                        width: 100%;
+                        margin: -10px 0 10px 0;
+                        padding-bottom: 10px;
+                        min-height: 50px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        color: $white;
+                        font-size: 17.5px;
+                        line-height: 20px;
+                        font-family: $museo-slab;
+                        font-weight: 500;
+                        span{
+                            display: table-cell;
+                            vertical-align: middle;
+                            text-align: center;
+                            padding: 0 10px;
+                        }
+                    }
+                }
+                .slick-list{
+                    li.slick-slide{
+                        &.slick-active{
+                            opacity:1;
+                        }
+                    }
+                }
+                .slick-dots{
+                    display: block !important;
+                    bottom: 0;  
+                    @include breakpoint("medium"){
+                        bottom: 10px;    
+                    }
+                    li{
+                        width: 10px;
+                        height: 10px;
+                        padding: 0;
+                        margin: 0 5px;
+                        button{
+                            width: 100%;
+                            height: 100%;
+                            border: none;
+                            &:before{
+                                opacity: 1;
+                                content:'';
+                                width: 100%;
+                                height: 100%;
+                                border: 2px solid #283442;
+                            }
+                        }
+                        &.slick-active{
+                           opacity: 1;
+                           button{
+                                &:before{
+                                    opacity: 1;
+                                    background: #283442;
+                                }
+                            } 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:943px){
+    .chirstmas-offer{
+        .chirstmas-offer-cont {
+            .kidstuff_countdown{
+                height: inherit;
+                .slider{
+                    p{
+                        min-height: inherit;
+                    }
+                }
+            }
+            .baby_felix{
+                min-height: 490px;
+            }
+        }
+    }
+}
+@media (min-width:640px) and (max-width:943px){
+    .chirstmas-offer .chirstmas-offer-cont .kidstuff_countdown{
+        padding-top: 70px;
+    }
+    .chirstmas-offer .chirstmas-offer-cont .kidstuff_countdown .events_date p{
+        margin: 0 5px;
+        min-height: 82px;
+    }
+    .chirstmas-offer .chirstmas-offer-cont .kidstuff_countdown p.heading{
+        margin-top: 20px;
+    }
+    .chirstmas-offer .chirstmas-offer-cont .kidstuff_countdown .events_date.slick-slider{
+        margin-bottom: 10px;
+    }
+}
+@media (max-width:550px){
+    .chirstmas-offer{
+        .chirstmas-offer-cont {
+            .kidstuff_countdown{
+                .slider{
+                    p{
+                        min-height: 70px !important;
+                    }
+                }
+            }
+        }
+    }
+}

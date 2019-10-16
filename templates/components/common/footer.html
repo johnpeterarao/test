@@ -1,0 +1,213 @@
+<div class="container custom-container">
+  {{#if banners.bottom}}
+  <div class="banners banner-bottom" data-banner-location="bottom">
+      <div class="banner block--floating-shadow">
+          {{{limit banners.bottom 1}}}
+      </div>
+  </div>
+  {{/if}}
+</div>
+<div class="custom-container-white">
+<footer class="footer" role="contentinfo">
+   
+        <div class="container">
+            <section class="row block--footer-top block--border-top footer-info">
+                <div class="column small-12 medium-6"> 
+                    <a href="/"><img src="{{cdn '/assets/img/custom-assets/logo/logo-kidstuff.png'}}" /></a>
+                    <p>Inspiring individuality and rewarding curiosity. Everything for a Brighter Child. Established in 1969.</p>
+                </div>
+                <div class="column small-12 medium-4 medium-offset-2">
+                    <h5>Customer Support</h5>
+                    <ul class="footer-info-list">
+                        {{#each pages}}
+                        <li class="column small-6">
+                            <a href="{{url}}">{{name}}</a>
+                        </li>
+                        {{/each}}
+                        <!--<li>
+                        <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
+                        </li>-->
+                    </ul>
+                </div>
+            </section>
+            {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
+            <article class="footer-info-col
+            footer-info-col--social
+            footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
+            data-section-type="footer-webPages">
+            <h5 class="footer-info-heading">{{lang 'social.connect'}}</h5>
+            {{> components/common/social-links}}
+            </article>
+            {{/if}}
+            
+            <section class="row footer-info footer-info-all block--border-top">
+    			{{#each categories}}
+                	{{#if name '===' 'Category'}}
+                        <div class="column small-12 medium-4">
+                            <h5>Categories</h5>
+                            <ul class="footer-info-list">
+                                {{#each children}}
+                                    <li class="column small-6">
+                                        <a href="{{url}}">{{name}}</a>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+    				{{/if}}
+                {{/each}}
+                {{#each categories}}
+                	{{#if name '===' 'Age'}}
+                        <div class="column small-12 medium-4">
+                            <h5>Age Range</h5>
+                    			<ul class="footer-info-list">
+                                	{{#each children}}
+                                        {{#each children}}
+                                            <li class="column small-6">
+                                                <a href="{{url}}">{{name}}</a>
+                                            </li>
+                                        {{/each}}
+                                	{{/each}}
+                    			</ul>
+                		</div>
+                     {{/if}}
+                {{/each}}
+                <div class="column small-12 medium-4">
+                    <h5>Our Brands</h5>
+                    <ul class="footer-info-list">
+                        <li class="column small-6">
+                            <a href="/brands/Bello/">Bello</a>
+                        </li>
+                        <li class="column small-6">
+                            <a href="/brands/First-Play/">First Play</a>
+                        </li>
+                        <li class="column small-6">
+                            <a href="/brands/LEGO/">LEGO</a>
+                        </li>
+                        <li class="column small-6">
+                            <a href="/brands/B.-Toys/">B. Toys</a>
+                        </li>
+                        <li class="column small-6">
+                            <a href="/brands/Our-Generation/">Our Generation</a>
+                        </li>
+                        <li class="column small-6">
+                            <a href="/brands/Wonderstuff/">Wonderstuff</a>
+                        </li>
+                        <li class="column small-6">
+                            <a href="/brands/Globber/">Globber Scooters</a>
+                        </li>
+                        <li class="column small-6">
+                            <a href="/brands/Beanie-Boos/">Beanie Boos</a>
+                        </li>
+                         <li class="column small-6">
+                            <a href="/brands/Micro-Scooters/">Micro Scooters</a>
+                        </li>
+                        <li class="column small-6">
+                            <a href="/brands/Sylvanian-Families/">Sylvanian Families</a>
+                        </li>
+                        <li class="column small-6">
+                            <a href="/brands/Freeplay-Kids/">Freeplay Kids</a>
+                        </li>
+                        <li class="column small-6">
+                            <a href="/brands/Saint-Germaine/">Saint Germaine</a>
+                        </li>
+                        <li class="column small-6">
+                            <a href="/brands">View All</a>
+                        </li>
+                    </ul>
+                </div>
+            </section> 
+            <section class="row block--border-top block--social-newsletter">
+                <article class="column small-12 medium-6 float-right" data-section-type="newsletterSubscription">
+                    <a href="javascript:void(0)" class="joinMailingListButton button button--primary button--small pull-right">Join our mailing list</a>
+                    {{#if settings.show_newsletter_box}}
+                    {{> components/common/subscription-form}}
+                    {{/if}}
+                </article>
+                
+                <!--<article class="column small-12 medium-6 float-right" data-section-type="newsletterSubscription">
+                    <a href="/login.php?action=create_account" class="button button--primary button--small pull-right">Sign Up to Kidstuff Rewards</a>
+                    {{#if settings.show_newsletter_box}}
+                        {{> components/common/subscription-form}}
+                    {{/if}}
+                </article>-->
+
+                <article class="column small-12 medium-6">
+                    <h5>Reach out to us</h5>
+                    {{> components/common/social-links}} 
+                </article>
+            </section>
+            <section class="row">
+                {{#if theme_settings.show_copyright_footer}}
+                <div class="column small-12 medium-8 footer-copyright clearfix">
+                    <p class="footer-address">Contact Us:</p><p class="footer-address"> Email: <a href="mailto:online@kidstuff.com.au">online@kidstuff.com.au</a> or Call: <a href="tel:1300578833">1300 57 88 33</a> | 77 Glebe Point Rd, Glebe NSW 2037 Australia</p>
+                    <p class="powered-by">&copy; <span id="copyright_year"></span> {{settings.store_name}} <span>| eCommerce Solution by <a href="https://www.randemgroup.com/" target="_blank">RANDEM</a> </span></p>
+                    <span class="mobile-terms"><a href="/terms-and-conditions/">Terms &amp; Conditions</a> <span class="copyright-divider">|</span> <a href="/privacy-policy/">Privacy Policy</a></span>
+            </div>
+            <script type="text/javascript">
+            document.getElementById("copyright_year").innerHTML = new Date().getFullYear();
+            </script>
+            {{/if}}
+            {{> components/common/payment-icons}}
+            <div class="column small-12 medium-4 footer-copyright float-right right desktop-terms"><a href="/terms-and-conditions/">Terms &amp; Conditions</a> <span class="copyright-divider">|</span> <a href="/privacy-policy/">Privacy Policy</a> </div>
+                </section>
+
+                {{#if theme_settings.show_geotrust_ssl_seal}}
+                <div class="footer-geotrust-ssl-seal">
+                    {{> components/common/geotrust-ssl-seal}}
+                </div>
+                {{/if}}
+                
+                {{#if theme_settings.show_powered_by}}
+                    <div class="footer-copyright">
+                        <p class="powered-by">Powered by <a href="http://bigcommerce.com" rel="nofollow">BigCommerce</a></p> 
+                    </div>
+                {{/if}}
+            
+        </div>
+        <div id="JoinMailingListModal" class="modal modal--small" data-reveal>
+        	<div class="modal-header">
+        		<h2 class="modal-header-title">Join Our Mailing List</h2>
+        		<a href="#" class="modal-close" aria-label="Close"><span aria-hidden="true">&#215;</span></a>
+        	</div>
+        	<div class="modal-body"><div class="modal-content"></div></div>
+        </div>
+        <div id="JoinMailingListModalBody" style="display:none">
+        		<!--[if lte IE 8]>
+        		<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+        		<![endif]-->
+        		<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+        		<script>
+        		  hbspt.forms.create({
+        		 portalId: "4496789",
+        		 formId: "1f6d1b39-7500-43b9-afd3-192bc86dbd9e"
+        		});
+        		</script>
+        </div>
+
+       
+</footer>
+</div>
+<!-- infoModal popup start -->
+    
+    <div class="memberOverlay" id="infoModal" style="display:none;">
+        <div class="activation-popup">
+            <a href="javascript:void(0);" class="closeOverlay1"><i class="fa fa-times close-popup" aria-hidden="true"></i></a>
+            <h2>THANK YOU</h2>
+            <h3 class="modal-content"></h3>
+            <div class="button-group clearfix">
+                <a href="/" class="button button--primary">CONTINUE SHOPPING</a>
+            </div>
+        </div>
+    </div>
+
+<!-- infoModal popup end -->
+
+<!-- offerPopup popup start -->
+<!-- <div class="memberOverlay" id="offerPopup" style="display: none;">
+    <div class="offer-popup">
+        <a href="javascript:void(0);" class="closeOverlay1 close"><i class="fa fa-times close-popup" aria-hidden="true"></i></a>
+        <img src="https://cdn11.bigcommerce.com/s-a4k7wcbf6g/product_images/uploaded_images/pop-up-30-off.jpg" alt="" title="">
+    </div>
+</div> -->
+<!-- offerPopup popup end -->
+

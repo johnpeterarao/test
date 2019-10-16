@@ -1,0 +1,54 @@
+{{#partial "page"}}
+<ul class="breadcrumbs desktop">
+    <li class="breadcrumb ">
+      <a href="/" class="breadcrumb-label">Home</a>
+    </li>
+    <li class="breadcrumb is-active">
+        <span class="breadcrumb-label">{{ page.title }}</span>
+    </li>
+</ul>
+<ul class="breadcrumbs mobile">
+  <li class="breadcrumb ">
+    <a href="/" class="breadcrumb-label">Back to Home</a>
+  </li>
+</ul>
+
+<main class="page static-page clearfix">
+
+	{{> components/page/static-page-sidemenu page_name=page.title}}
+
+    <div class="column small-12 large-9 static-page--content">
+        <h1 class="page-heading">{{ page.title }}</h1>
+        {{#replace '%%Syndicate%%' page.content}}
+            {{> components/page/rss_feed}}
+        {{else}}
+           {{{page.content}}}
+        {{/replace}}
+    </div>
+
+    <div class="banners banner-bottom">
+      <div class="banner block--floating-shadow">
+        <p><img class="__mce_add_custom__" src="/product_images/uploaded_images/img-gift-card-2x.png" alt="img-gift-card-2x.png"></p>
+        <h2>Can't find the right gift? Buy a Kidstuff Gift Card!</h2>
+        <p><a class="button button--primary" href="/physical-gift-card/">Buy a Gift Card</a></p>
+        <p><img class="__mce_add_custom__" src="/product_images/uploaded_images/img-giftcardbanner-bello.jpg" alt="img-giftcardbanner-bello.jpg"></p>
+      </div>
+    </div>
+
+    {{> components/page/static-page-bottom-sidemenu page_name=page.title}}
+
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

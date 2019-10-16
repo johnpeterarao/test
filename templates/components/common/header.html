@@ -1,0 +1,43 @@
+<header class="header" role="banner">
+    <!-- <div class="strip-banner"> It's Christmas in July! Enjoy savings with up to 30% off </div> -->
+    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+        <span class="mobileMenu-toggleIcon">Toggle menu</span>
+    </a>
+    <a href="javascript:void(0);" class="mobile mobileMenu-search responsiveSearchBtn"><img src="{{cdn '/assets/img/custom-assets/header/search_responsive_icon.png'}}"/></a>
+
+    {{> components/common/navigation}}
+
+    <div class="custom-container-white">
+        <div class="container">
+
+            <div class="desktop home-search navUser-action navUser-action--quickSearch float-right" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">
+              <input type="button" value="search" class="home-search--button" />
+              <input class="float-right home-search--text" name="search" type="text" placeholder="Search"/>
+            </div>
+
+            <a href="/store-finder/" title="" class="button button--primary button--find-store desktop float-left">
+                <img src="{{cdn '/assets/img/custom-assets/header/store_locator_icon.png'}}" />
+                Find a store</a>
+
+            {{#if template_file '===' 'pages/home'}}
+                <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
+                    {{> components/common/store-logo}}
+                </h1>
+            {{else}}
+                <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+                    {{> components/common/store-logo}}
+                </div>
+            {{/if}}
+        </div>
+
+        <div class="navPages-container" id="menu" data-menu>
+            {{> components/common/navigation-menu}} 
+        </div>
+    </div>
+
+</header>
+<div class="container mobile">
+    <div class=" mobileMenu-search-section">
+        {{> components/common/quick-search}}
+    </div>
+</div>

@@ -1,0 +1,43 @@
+{{#partial "page"}}
+<ul class="breadcrumbs desktop">
+    <li class="breadcrumb">
+      <a href="/" class="breadcrumb-label">Home</a>
+    </li>
+    <li class="breadcrumb is-active">
+        <span class="breadcrumb-label">{{ page.title }}</span>
+    </li>
+</ul>
+<ul class="breadcrumbs store-details">
+    <li class="breadcrumb"><img src="{{cdn '/assets/img/custom-assets/back-icon.svg'}}"/></figure><a href="/store-finder/">Back to Store Finder</a></li>
+</ul>
+<ul class="breadcrumbs mobile">
+  <li class="breadcrumb ">
+    <a href="/" class="breadcrumb-label"> Back to Home</a>
+  </li>
+</ul>
+
+<main class="page static-page store-details clearfix">
+    <div class="column small-12 medium-offset-2 medium-8 static-page--content static-page--store-page">
+        <h1 class="page-heading">{{ page.title }}</h1>
+        {{#replace '%%Syndicate%%' page.content}}
+            {{> components/page/rss_feed}}
+        {{else}}
+           {{{page.content}}}
+        {{/replace}}
+    </div>
+
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

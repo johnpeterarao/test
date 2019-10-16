@@ -1,0 +1,48 @@
+---
+products:
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+---
+{{#partial "page"}}
+<ul class="breadcrumbs desktop">
+    <li class="breadcrumb ">
+      <a href="/" class="breadcrumb-label">Home</a>
+    </li>
+    <li class="breadcrumb is-active">
+        <span class="breadcrumb-label">{{ page.title }}</span>
+    </li>
+</ul>
+<ul class="breadcrumbs mobile">
+  <li class="breadcrumb ">
+    <a href="/" class="breadcrumb-label">Back to Home</a>
+  </li>
+</ul>
+
+<main class="page static-page clearfix">
+
+    <div class="column small-12 static-page--content discontinued-item">
+
+        {{#replace '%%Syndicate%%' page.content}}
+            {{> components/page/rss_feed}}
+        {{else}}
+           {{{page.content}}}
+        {{/replace}}
+
+    </div>
+
+
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

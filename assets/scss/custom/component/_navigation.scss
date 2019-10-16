@@ -1,0 +1,517 @@
+.navPages-container {
+    &.is-open {
+        padding: 64px 0 25px;
+
+        &.search-open{
+            padding-top: 109px;
+        }
+    }
+
+    @include breakpoint("smartphone") {
+        .dummy-haeder {
+            min-height: 64px;
+            margin: 0 -16px;
+            width: 100%;
+            top: 0px;
+            z-index: 1;
+            position: absolute;
+
+            @include box-shadow(0px, 13px, 20px, -11px, rgba(0, 0, 0, 0.2), false);
+        }
+    }
+}
+
+.navUser ul {
+    display: inline-flex;
+
+    &.previewCartList{
+        display: block;
+    }
+
+    @include breakpoint("smartphone") {
+        margin-top: 13px;
+    }
+}
+
+.navPages {
+    border-top: solid 1px $midnight;
+    border-bottom: solid 1px $midnight;
+
+    @include breakpoint("smartphone") {
+        background: $white;
+        border: none;
+    }
+
+
+    .navPages-quickSearch {
+        @include breakpoint("smartphone") {
+            display: none;
+        }
+    }
+
+    .navPages-list {
+        float: left;
+
+        @include breakpoint("smartphone") {
+            border-top: none;
+            display: block;
+            float: none;
+            width: 100%;
+        }
+    }
+
+    .navPages--browse-text {
+        font-family: $secondary;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: $midnight;
+        text-transform: uppercase;
+        float: left;
+        padding: 13px 10px 10px 0;
+
+        @include breakpoint("smartphone") {
+            display: block;
+            float: none;
+            width: 100%;
+            padding: 13px 10px 11px 0;
+        }
+    }
+
+    .navPages--gift-finder-link {
+        font-family: $secondary;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: $black;
+        text-transform: uppercase;
+        float: right;
+        padding: 13px 0 10px 0;
+
+        @include breakpoint("smartphone") {
+            float: none;
+            padding: 12px 0;
+            border-top: solid 1px $midnight;
+            border-bottom: solid 1px $midnight;
+
+            span {
+                font-family: $secondary;
+                display: block;
+                text-align: center;
+                padding: 12px 0;
+                font-size: 12px;
+
+                a {
+                    font-size: 14px;
+                    text-transform: initial;
+                    font-weight: 500;
+                }
+
+                img {
+                    position: relative;
+                    top: -2px;
+                    margin: 0 10px 0 0;
+                    left: 0;
+                }
+            }
+        }
+
+
+        a {
+            color: $cinnabar;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        img {
+            margin: 0 3px 0 5px;
+        }
+    }
+
+    ul {
+        &.navPages-list {
+            @include breakpoint("smartphone") {
+                padding: 0;
+
+                &.navPages-list--mobile-view {
+                    li {
+                        &.navPages-item {
+                            a {
+                                &.navPages-action {
+                                    padding: 20px 0 18px;
+                                }
+                            }
+
+                            &:first-child {
+                                a {
+                                    &.navPages-action {
+                                        padding-top: 17px;
+                                    }
+                                }
+                            }
+
+                            &:last-child {
+                                a {
+                                    &.navPages-action {
+                                        border: none;
+                                    }
+                                }
+                            }
+
+                            ul {
+                                &.navPage-subMenu-list {
+                                    li {
+                                        &.navPage-subMenu-item {
+                                            a {
+                                                &.navPage-subMenu-action {
+                                                    margin: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.navPages-list--user.navPages-list--user-mobile-view {
+                    padding: 6px 0 0;
+
+                    li {
+                        &.navPages-item {
+                            a {
+                                &.navPages-action {
+                                    text-align: center;
+                                    border: none;
+                                    color: $midnight;
+                                    padding: 12px 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            li {
+                &.navPages-item {
+                    a {
+                        &.navPages-action {
+                            font-family: $primary;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 14px;
+                            line-height: 18px;
+                            color: $black;
+                            padding: 12px 10px 10px;
+                            margin: 0;
+
+                            &.is-open {
+                                color: $harley-davidson-orange;
+                            }
+
+                            @include breakpoint("smartphone") {
+                                color: $cinnabar;
+                                padding: 0;
+                                padding-top: 13px;
+                                padding-bottom: 11px;
+                                border-bottom: solid 1px $zircon;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .navPages-action {
+        &.is-open {
+            background: $white;
+
+            @include breakpoint("smartphone") {
+                background: transparent;
+            }
+        }
+    }
+
+    .navPage-subMenu {
+        background: $white;
+
+        @include box-shadow(2px, 12px, 18px, -12px, rgba(0, 0, 0, 0.4), false);
+
+        max-width: 944px;
+        padding: 20px 0 0 !important;
+        top: 40px;
+        right: 0;
+        margin: 0 auto;
+
+        @include breakpoint("smartphone") {
+            background: transparent;
+            box-shadow: none;
+            padding: 0 !important;
+        }
+
+
+        @include breakpoint("medium") {
+            &.age {
+                width: 543px;
+                padding: 32px 42px !important;
+
+                ul {
+                    &.navPage-subMenu-list {
+                        li {
+                            &.navPage-subMenu-item {
+                                &:last-child {
+                                    width: 75%;
+
+                                    ul {
+                                        &.navPage-childList {
+                                            li {
+                                                &.navPage-childList-item {
+                                                    width: 50%;
+                                                    float: left;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ul {
+        &.navPage-subMenu-list {
+            @include breakpoint("smartphone") {
+                padding: 12px 0 11px;
+                border-bottom: solid 1px $zircon;
+                margin: 0;
+                clear: both;
+                overflow: hidden;
+            }
+
+
+            @include breakpoint("medium") {
+                &.brand {
+                    li.navPage-subMenu-item {
+                        width: 16.66666666666667%;
+                    }
+                }
+            }
+
+
+            li {
+                &.navPage-subMenu-item {
+                    padding: 0 !important;
+                    min-height: 170px;
+
+                    @include breakpoint("smartphone") {
+                        min-height: inherit;
+                        float: left;
+                        width: 100%;
+                    }
+
+
+                    a {
+                        &.navPage-subMenu-action {
+                            color: $harley-davidson-orange;
+                            text-transform: uppercase;
+                            border: none;
+                            padding: 0;
+                            margin: 0 0 13px;
+
+                            @include breakpoint("smartphone") {
+                                color: $midnight;
+                                margin: 14px 0 13px;
+                                display: block;
+                            }
+                        }
+                    }
+
+                    ul {
+                        &.navPage-childList {
+                            @include breakpoint("smartphone") {
+                                border: 0;
+                                padding: 10px 0 8px;
+                                margin: 0;
+                                border-top: solid 1px $zircon;
+                                border-bottom: solid 1px $zircon;
+                            }
+
+
+                            li {
+                                &.navPage-childList-item {
+                                    a {
+                                        &.navPage-childList-action {
+                                            padding: 5px 0px;
+                                            color: $midnight;
+                                            font-size: 12px;
+                                            line-height: 15px;
+
+                                            @include breakpoint("smartphone") {
+                                                border: none;
+                                            }
+
+
+                                            &.show-all {
+                                                margin: 0 0 20px;
+                                                color: $harley-davidson-orange;
+
+                                                @include breakpoint("smartphone") {
+                                                    margin: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Responsive
+@include breakpoint("smartphone") {
+    .navPages .navPages-list--user {
+        &.mobile {
+            clear: both;
+            overflow: hidden;
+            text-align: center;
+            padding: 25px 0 23px;
+            border-bottom: solid 1px $midnight;
+
+            li {
+                clear: both;
+                overflow: hidden;
+
+                &.navPages-item {
+                    a {
+                        &.navPages-action {
+                            float: none;
+                            font-family: $secondary;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            border: none;
+                            display: initial;
+                            padding: 0;
+                            text-align: center;
+                            font-size: 12px;
+                            line-height: 12px;
+                        }
+                    }
+
+                    span {
+                        font-family: $secondary;
+                        font-weight: 400;
+                        padding: 0 10px;
+                        font-size: 12px;
+                        line-height: 12px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    .has-subMenu {
+        .navPages-action-moreIcon {
+            float: right;
+            transform: none;
+            width: inherit;
+            height: inherit;
+
+            svg {
+                display: none;
+            }
+
+            &:before {
+                font-family: $FontAwesome;
+                font-style: normal;
+                font-size: 16px;
+                content: "\f107";
+                font-weight: bold;
+            }
+        }
+
+        &.is-open {
+            .navPages-action-moreIcon {
+                &:before {
+                    content: "\f106";
+                }
+            }
+        }
+    }
+}
+
+
+.mobileMenu-toggle {
+    left: 6px;
+    top: 7px;
+    //top: 40px;
+}
+
+.mobileMenu-search {
+    position: absolute;
+    z-index: 50;
+    top: 24px;
+    //top: 57px;
+    left: 64px;
+}
+
+.mobileMenu-search-section {
+    position: relative;
+    z-index: 99;
+    position: fixed;
+    background: #FFF;
+    top: 65px;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    padding: 1.5rem;
+    display: none;
+    .container {
+        padding: 0;
+        .form {
+            padding: 0;
+            margin: 0;
+            .form-field {
+                padding: 0;
+                margin: 0;
+                .home-search--button {
+                    position: absolute;
+                    width: 16px;
+                    height: 16px;
+                    left: 0;
+                    top: 15px;
+                    background: url("../img/custom-assets/header/search_icon.png") no-repeat 0 0;
+                    border: none;
+                    text-indent: -9999px;
+                }
+
+                .form-input {
+                    width: 100%;
+                    border: none;
+                    border-bottom: solid 1px $midnight;
+                    font-family: $secondary;
+                    font-size: 13px;
+                    line-height: 18px;
+                    font-style: normal;
+                    font-weight: 300;
+                    color: $nobel;
+                    height: inherit;
+                    padding: 13px 24px;
+                    border-radius: 0px;
+                    background: transparent;
+                }
+            }
+        }
+    }
+}

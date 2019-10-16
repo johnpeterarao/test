@@ -1,0 +1,90 @@
+{{#partial "page"}}
+{{!--<ul class="breadcrumbs desktop">
+    <li class="breadcrumb ">
+      <a href="/" class="breadcrumb-label">Home</a>
+    </li>
+    <li class="breadcrumb is-active">
+        <span class="breadcrumb-label">{{ page.title }}</span>
+    </li>
+</ul>
+<ul class="breadcrumbs mobile">
+  <li class="breadcrumb ">
+    <a href="/" class="breadcrumb-label">Back to Home</a>
+  </li>
+</ul>--}}
+
+<main class="page static-page memberRegistration clearfix">
+    <h1>COMPLETE ACTIVATION</h1>
+    <div class="banner-new">
+        <img src="{{cdn 'assets/img/custom-assets/activation/member-registration_banner.jpg'}}" />
+        <h2>ONE STEP AWAY FROM <span>ACTIVATING</span> WITH US</h2>
+    </div>
+    <!--<div class="banner">
+        <h2>ONE STEP AWAY FROM <span>ACTIVATING</span> WITH US</h2>
+    </div>-->
+
+    <h4 class="title">Hey!<br> you are one step away from receiving the <br>benefits of a <strong>Kidstuff member!</strong></h4>
+
+    <form name="memberRegistration" id="memberRegistration" class="account-create-form activate-form form" onsubmit="return false">
+        
+
+        <div id="formFieldShow" class="container clearfix">
+        <div class="row">
+            <div class="column small-12 medium-11 medium-offset-1">
+                <h6>Setup Password:</h6>
+            </div>
+            <div class="column small-12 medium-4 medium-offset-1">
+                <div class="form-field">
+                    <label class="form-label" for="member_password">Password<small>*</small></label>
+                    <input type="password"  class="form-input" id="member_password" name="member_password" value="" autocomplete="off" >
+                </div>
+            </div>
+
+            <div class="column small-12 medium-4">
+                <div class="form-field">
+                    <label class="form-label" for="member_conf_password">Confirm Password<small>*</small></label>
+                    <input type="password"  class="form-input" id="member_conf_password" name="member_conf_password" value="" autocomplete="off" >
+                </div>
+            </div>
+
+            <div class="column small-12 medium-2">
+                <div class="form-field">
+                    <label class="form-label" for="member_conf_password">&nbsp;</label>
+                    <input type="submit" class="button button--primary form-prefixPostfix-button--postfix" value="Submit">
+                </div>
+            </div>
+
+            <div class="column small-12 medium-11 medium-offset-1">
+                <span class="form-inlineMessage"></span>
+            </div>
+
+        </div>
+        </div>
+        
+    <div class="column small-12" id="faultyUrlShow" style="display:none">Link to this is not proper. Please verify the link</div>
+    </form>
+
+    <!-- memberOverlay popup start -->
+    
+    <div class="memberOverlay" id="memberDataCollectionPopUp" style="display: none;">
+        <div class="activation-popup">
+            <a href="javascript:void(0);" class="closeOverlay1"><i class="fa fa-times close-popup" aria-hidden="true"></i></a>
+            <h2>WELCOME TO <br> KIDSTUFF!</h2>
+            <p>You have completed your activation with Kidstuff.</p>
+            <p> <strong>Let us tailor your Kidstuff experience</strong> </p>
+
+            <div class="button-group clearfix">
+                <input type="button" class="button button--primary memberFormNow" value="Now">
+                <a href="javascript:void(0);" class="button button--primary closeOverlay1">Later</a>
+            </div>
+        
+        </div>
+    </div>
+
+    <!-- memberOverlay popup end -->
+
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

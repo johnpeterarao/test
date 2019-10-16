@@ -1,0 +1,83 @@
+<div class="modal-header">
+    <h2 class="modal-header-title">{{lang 'cart.reconfigure_product' name=product_name}}</h2>
+</div>
+<div class="modal-body" data-product-option-change>
+    <div class="alertMessageBox" hidden>
+        {{> components/common/alert-info}}
+    </div>
+
+    <form id="CartEditProductFieldsForm" method="post" action="cart.php" enctype="multipart/form-data">
+        <input type="hidden" name="action" value="EditProductFieldsInCart">
+        <input type="hidden" name="item_id" value="{{quote_item_id}}">
+        {{#each customizations}}
+            {{{dynamicComponent 'components/products/customizations'}}}
+        {{/each}}
+
+        {{#each options}}
+            {{{dynamicComponent 'components/products/options'}}}
+        {{/each}}
+
+        <div class="form-actions">
+            <input class="button button--primary" type="submit" value="{{lang 'common.save'}}">
+        </div>
+    </form>
+</div>
+<script type="text/javascript"> 
+$(document).ready(function(){ 
+	if($.trim($('#CartEditProductFieldsForm').find(".productOptionRadio:first").find('label:first').text().replace('Required', '').replace(':', '').replace(/ /g, '')) == 'BuyingFor'){
+		$('[data-product-attribute=\'input-text\']').hide();
+		$('[data-product-attribute=\'textarea\']').hide();
+		$('[data-product-attribute=\'set-radio\']').find('input[type="radio"]').click(function(e){
+			if($.trim($(e.target).next('label').text().replace(/ /g, '')) == 'Me'){
+				$('[data-product-attribute=\'input-text\']').hide().find('input[type="text"]').val('');
+				$('[data-product-attribute=\'textarea\']').hide().find('textarea').val('');
+			}else if($.trim($(e.target).next('label').text().replace(/ /g, '')) == 'Other'){
+				$('[data-product-attribute=\'input-text\']').show();
+				$('[data-product-attribute=\'textarea\']').show();
+			}
+		});
+		if($('[data-product-attribute=\'set-radio\']').find('input[type="radio"]:checked').next('label').text() == 'Other'){
+			$('[data-product-attribute=\'input-text\']').show();
+			$('[data-product-attribute=\'textarea\']').show();
+		}else{
+			$('[data-product-attribute=\'textarea\']').find('textarea').val('');
+		}
+	}
+	$(document).on('submit','#CartEditProductFieldsForm',function(){
+		if($('[data-product-attribute=\'input-text\']').length > 0){
+			const re = /^.+@.+\..+/;
+			if($.trim($('[data-product-attribute=\'set-radio\']').find('input[type="radio"]:checked').next('label').text().replace(/ /g, '')) == 'Other'){
+				const recipientMail = $('[data-product-attribute=\'input-text\']').find('label:contains("Recipient Email")').next('input[type="text"]').val();
+				const confirmMail = $('[data-product-attribute=\'input-text\']').find('label:contains("Confirm Email")').next('input[type="text"]').val();
+				if(recipientMail == ''){
+					alert("Please enter Recipient Email address");
+					return false;
+				}
+				const result = re.test(recipientMail);
+				if(!result){
+					alert("Please enter proper Recipient Email address");
+					return false;
+				}
+				if(confirmMail == ''){
+					alert("Please enter Confirm Email address");
+					return false;
+				}
+				const result1 = re.test(confirmMail);
+				if(!result1){
+					alert("Please enter proper Confirm Email address");
+					return false;
+				}
+				if(recipientMail != confirmMail){
+					alert("Please check email matches confirmation email.");
+					return false;
+				}
+				if($('[data-product-attribute=\'input-text\']').find('label:contains("Recipient Name")').next('input[type="text"]').val() == ''){
+					alert("Please enter Recipient Name");
+					return false;
+				}
+			}
+			
+		}
+	});
+});
+</script>

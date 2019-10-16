@@ -1,0 +1,218 @@
+---
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+---
+{{#partial "hero"}}
+<div class="timer-offer" style="display:none;"> 
+            <h2>Christmas in July Countdown</h2>
+            <img src="https://s.mmgo.io/t/BBi0/scale_2x" />
+        </div>
+        <div class="timer-offer" style="display:none;"> 
+            <h2>Super Saturday Sale - Limited Time Left</h2>
+            <img src="https://s.mmgo.io/t/BERS/scale_2x"/>
+            
+        </div>
+        <style>
+        .timer-offer {display: table;  margin: 25px auto 0; text-align: center; max-width: 944px;}
+        .timer-offer img{margin-top:-20px;}
+        @media (max-width: 47.938em){
+        .timer-offer h2 { font-size: 20px; line-height:24px; padding:0 10px 10px 10px;}
+        }
+        /*.heroCarousel{margin-top: -10px;}*/
+        </style>
+    {{#if carousel}}
+        {{> components/carousel}}
+    {{/if}}
+    {{{snippet 'home_content'}}}
+{{/partial}}
+
+{{#partial "page"}}
+
+    {{#each shipping_messages}}
+        {{> components/common/alert-info message}}
+    {{/each}}
+<br>
+<div class="main full">
+    <div class="chirstmas-offer" style="display: none;">
+            <h2 class="page-heading"> Christmas Offer
+                <figure>
+                <img src="{{cdn '/assets/img/custom-assets/chirstmas/header-accent-top.png'}}"/>
+            </figure></h2>
+            <div class="chirstmas-offer-cont">
+                <div class="baby_felix">
+                    <img src="{{cdn 'assets/img/custom-assets/chirstmas/bundle_banner.jpg'}}">
+                    <a href="https://www.kidstuff.com.au/christmas-ideas/discover-adventures-with-our-scooters/">Shop Ideas</a>
+                </div>
+                <div class="right">
+                    <div class="shop_e_gifts">
+                        <img src="{{cdn 'assets/img/custom-assets/chirstmas/shop_e_gifts.jpg'}}">
+                        <a href="http://bit.ly/2KCtbGr" class="shop-e-gifts-btn">Shop Gift Card</a>
+                        <p>Couldn’t find what your little one’s looking for? 
+                            <a href="http://bit.ly/2KCtbGr">Check out our gift cards</a></p>
+                    </div>
+                    <div class="kidstuff_countdown">
+                        <p class="heading"><a href="\shipping-and-delivery">Guaranteed Christmas Delivery Dates</a></p>
+                        <div class="events_date" class="slider" data-slick='{
+                                "dots": true,
+                                "infinite": true,
+                                "mobileFirst": true,
+                                "slidesToShow": 1,
+                                "slidesToScroll": 1,
+                                "autoplay": true,
+                                "autoplaySpeed": 2000,
+                                "arrows": false,
+                                "responsive": [
+                                    {
+                                        "breakpoint": 1023,
+                                        "settings": {
+                                            "slidesToScroll": 1,
+                                            "slidesToShow": 1,
+                                            "dots": true
+                                        }
+                                    },
+                                    {
+                                        "breakpoint": 768,
+                                        "settings": {
+                                            "slidesToScroll": 1,
+                                            "slidesToShow": 1,
+                                            "dots": true
+                                        }
+                                    },
+                                    {
+                                        "breakpoint": 550,
+                                        "settings": {
+                                            "slidesToScroll": 1,
+                                            "slidesToShow": 1,
+                                            "dots": true
+                                        }
+                                    }
+                                ]
+                            }'>
+                            <p>NSW Sydney Metro - Sunday 16/12/18</p>
+                            <p>Melb Metro/ QLD metro/ ACT/Regional NSW/Central Coast - Wednesday 12/12/18</p>
+                            <p>Adelaide, Rural VIC/ Rural NSW - Monday 10/12/18</p>
+                            <p>Far North & Rural QLD - Sunday 9/12/18</p>
+                            <p>WA/ NT - Sunday 9/12/18</p>
+                        </div>
+                      <ul class="slider" data-slick='{
+                                "dots": true,
+                                "infinite": true,
+                                "mobileFirst": true,
+                                "slidesToShow": 1,
+                                "slidesToScroll": 1,
+                                "autoplay": true,
+                                "autoplaySpeed": 2000,
+                                "arrows": false,
+                                "responsive": [
+                                    {
+                                        "breakpoint": 1023,
+                                        "settings": {
+                                            "slidesToScroll": 1,
+                                            "slidesToShow": 1,
+                                            "dots": true
+                                        }
+                                    },
+                                    {
+                                        "breakpoint": 768,
+                                        "settings": {
+                                            "slidesToScroll": 1,
+                                            "slidesToShow": 1,
+                                            "dots": true
+                                        }
+                                    },
+                                    {
+                                        "breakpoint": 550,
+                                        "settings": {
+                                            "slidesToScroll": 1,
+                                            "slidesToShow": 1,
+                                            "dots": true
+                                        }
+                                    }
+                                ]
+                            }'>
+                            <li>
+                                <img src="https://s.mmgo.io/t/BKMb/scale_3x" alt="motionmailapp.com" />
+                                <p><span>WA/ NT </span></p>
+                            </li>
+                            <li>
+                              <img src="https://s.mmgo.io/t/BKMZ/scale_3x" alt="motionmailapp.com" />
+                              <p><span>Adelaide, Ruler VIC/ Ruler NSW</span></p>
+                            </li>
+                            <li>
+                              <img src="https://s.mmgo.io/t/BKMa/scale_3x" alt="motionmailapp.com" />
+                              <p><span>Far North &amp; Ruler QLD</span></p>
+                            </li>
+                            <li>
+                              <img src="https://s.mmgo.io/t/BKMY/scale_3x" alt="motionmailapp.com" />
+                              <p><span>Melb Metro/ QLD metro/ ACT/Regional NSW/Central Coast</span></p>
+                            </li>
+                            <li>
+                              <img src="https://s.mmgo.io/t/BIhJ/scale_3x" alt="motionmailapp.com" />
+                              <p><span>NSW Sydney Metro</span></p>
+                            </li>
+                          </ul> 
+                    </div>    
+                </div>
+                
+            </div>
+    </div>
+    
+    {{#if products.featured}}
+        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+    {{/if}}
+
+    {{#if products.top_sellers}}
+        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+    {{/if}}
+
+    {{#if products.new}}
+        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+    {{/if}}
+
+    {{> components/featured-categories/featured-categories}}
+
+    <div class="row block--brand block--border-top text-center homeOurBrands"></div>
+    <div class="row blog block--border-top block--blog">
+        <div class="text-center block--blog-heading">
+            <h5>Recent Articles</h5>
+            <h2 class="page-heading">Get Inspired</h2>
+            <a href="/blog/" class="common-link-type-one underline-link">See all articles</a>
+        </div>
+        <ul class="clearfix block--blog-list">
+            {{#each blog.recent_posts}}
+            <li class="column small-6 medium-4">
+
+                <a href="{{url}}">
+                    <img src="{{getImage thumbnail 'gallery_size'}}" alt="{{thumbnail.alt}}" class="block--floating-shadow2">
+                </a>
+                <span class="blog-date">{{date_published}}</span>
+                <h5><a href="{{url}}">{{title}}</a></h5>
+                <a href="{{url}}" class="common-link-type-two underline-link">
+                    Read More
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+        
+    </div>
+    <div class="row block--our-heritage block--floating-shadow text-center" onclick="javascript:location.href='/about-kidstuff/'">
+        <h5>Our Heritage</h5>
+        <h3>Inspiring individuality and rewarding curiosity.
+            Everything for a Brighter Child.</h3>
+            <a href="/about-kidstuff/" class="underline-link">Read about our Heritage</a>
+        </div>
+
+    </div>
+
+</div>
+{{/partial}}
+{{> layout/base}}

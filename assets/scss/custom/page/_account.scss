@@ -1,0 +1,206 @@
+.login {
+    margin: 0 auto 0;
+    max-width: inherit;
+
+    .login-row {
+        .new-customer {
+            @include breakpoint("smartphone-large") {
+                margin-top: 20px;
+            }
+
+
+            .panel {
+                border: 1px solid $zircon;
+                background: $azure;
+
+                .panel-header, .panel-body {
+                    background: $azure;
+                }
+
+                .panel-header {
+                    margin-top: 12px;
+                    margin-bottom: 10px;
+                    text-align: center;
+
+                    h2 {
+                        font-size: 30px;
+                        line-height: 30px;
+                    }
+                }
+
+                .panel-body > :first-child {
+                    margin-top: 0;
+                    font-size: 16px;
+                    text-align: center;
+                }
+
+                .panel-body {
+                    padding-bottom: 0;
+
+                    .new-customer-fact-list {
+                        margin-left: 0;
+                        margin-bottom: 19px;
+                        margin-top: 19px;
+
+                        li {
+                            &.new-customer-fact {
+                                font-size: 13px;
+                                line-height: 16px;
+                                font-family: $primary;
+                                font-weight: 300;
+                                margin-top: 12px;
+                                color: $dim-gray;
+                                position: relative;
+                                text-align: left;
+                                padding: 0 0 0 20px;
+
+                                &:before {
+                                    content: "\f058";
+                                    font-family: $FontAwesome;
+                                    color: $harley-davidson-orange;
+                                    margin-right: 10px;
+                                    font-size: 17px;
+                                    top: 0;
+                                    position: absolute;
+                                    left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.account {
+    h1 {
+        font-family: $primary;
+        font-size: 32px;
+        line-height: 32px;
+        font-weight: 300;
+        color: #e2231a;
+        text-align: left;
+        margin-top: 44px;
+
+        @include breakpoint("smartphone"){
+            padding-left: 7.5px;
+            padding-right: 7.5px;
+        }
+    }
+
+    .form-actions {
+        .button {
+            font-family: $primary;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        padding-top: 37px;
+        margin-left: -0.75rem;
+    }
+}
+
+.account-create-form {
+    h5 {
+        color: #e2231a;
+        font-family: $primary;
+        font-size: 16px;
+        line-height: 21px;
+        font-weight: 500;
+        margin-bottom: 22px;
+
+         @include breakpoint("smartphone"){
+            padding-left: 7.5px;
+            padding-right: 7.5px;
+        }
+    }
+
+    .form-label {
+        font-family: $secondary;
+        font-weight: 400;
+        color: #253443;
+
+        small {
+            float: none;
+            color: #fff;
+            vertical-align: top;
+            font-size: 0;
+
+            &:after {
+                content: '*';
+                color: #e2231a;
+                font-size: 14px;
+                line-height: 14px;
+            }
+        }
+    }
+
+    .form-field {
+        float: left;
+        width: 50%;
+        padding-right: 7.5px;
+
+        @include breakpoint("smartphone"){
+            width: 100%;
+            padding-left: 7.5px;
+        }
+
+        &#FormField_25 {
+            width: 100%;
+
+            h5 {
+                margin-bottom: 10px;
+            }
+
+            p {
+                &.rewarded {
+                    padding-bottom: 6px;
+                }
+
+                &.reward {
+                    padding-top: 11px;
+                }
+            }
+        }
+
+        &#FormField_26, &#FormField_27 {
+            width: 100%;
+            padding: 0;
+            margin: 0 0 16px;
+        }
+
+        .form-select {
+            max-width: 100%;
+        }
+
+        input {
+            &[type="text"], &[type="email"], &[type="password"] {
+                border-radius: 2px;
+                background-color: #ffffff;
+                border: solid 1px #e8e9e9;
+                padding: 11px;
+            }
+        }
+    }
+
+    .form-field:nth-of-type(2n) {
+        padding-right: 0;
+        padding-left: 7.5px;
+
+        @include breakpoint("smartphone"){
+            padding-left: 7.5px;
+            padding-right: 7.5px;
+        }
+    }
+
+    .required-note{
+        color: #e2231a;
+        font-family: $primary;
+        font-size: 13px;
+        line-height: 21px;
+        font-weight: 500; 
+        margin-bottom: 20px;
+    }
+
+}
