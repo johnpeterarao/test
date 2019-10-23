@@ -41,7 +41,7 @@
     "karma-webpack": "1.7.0",
     "lazysizes": "3.0.0",
     "load-grunt-config": "0.17.1",
-    "lodash": "^3.5.0",
+    "lodash": "^4.17.13",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.26",
     "nod-validate": "^2.0.12",
