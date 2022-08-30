@@ -43,7 +43,7 @@
     "load-grunt-config": "0.17.1",
     "lodash": "^3.5.0",
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.26",
+    "moment-timezone": "^0.5.35",
     "nod-validate": "^2.0.12",
     "pace": "hubspot/pace#a03f1f1de62c9cea6c88b2267b8d7a83858b6cb6",
     "slick-carousel": "1.5.5",
